@@ -620,20 +620,23 @@ overflow-wrap: break-word;
 /* ======================================
    FILM
 ====================================== */
-.film-container {
-position: relative;
-width: 800px;
-background: #3f00a8 !important;
-border: 3px solid #b388ff;    
-border-radius: 0px;
-margin: 0px auto 50px auto;
-padding: 30px;
-/* CUADRÍCULA VERDE NEÓN - MÁS VISIBLE */
-background-image: 
-    repeating-linear-gradient(rgba(0, 255, 0, 0.5) 0px, rgba(0, 255, 0, 0.5) 2px, transparent 2px, transparent 30px),
-    repeating-linear-gradient(90deg, rgba(0, 255, 0, 0.5) 0px, rgba(0, 255, 0, 0.5) 2px, transparent 2px, transparent 30px);
-background-size: 30px 30px;
-background-position: 0 0;
+film-container {
+  position: relative;
+  width: 800px;
+  background-color: #3f00a8; /* Fondo morado base */
+  border: 1px solid #b388ff; /* Borde más fino */
+  border-radius: 0px;
+  margin: 0px auto 50px auto;
+  padding: 30px;
+  box-sizing: border-box;
+
+  /* CUADRÍCULA EN MORADO LIGERO / BLANCO SÚPER SUBTIL (1px) */
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  
+  /* Tamaño de los cuadros (puedes ajustar de 30px a 50px si los quieres más grandes) */
+  background-size: 40px 40px;
 }
 .film-container::before {
 content: "";
