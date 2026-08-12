@@ -233,7 +233,7 @@ border-bottom: 1px solid white !important;
 ====================================== */
 .site-title {
 font-family: 'Bebas Neue', cursive;
-font-size: 20rem; 
+font-size: 15rem; 
 color: #ff00a9 !important;
 text-align: center;
 font-weight: 400;
@@ -449,7 +449,7 @@ display: none !important;
 }
 .titlesbig-body-mobile {
 font-family: 'Bebas Neue', cursive;
-font-size: 10rem; 
+font-size: 8rem; 
 color: #ff00a9 !important;
 text-align: center; 
 font-weight: 400;
