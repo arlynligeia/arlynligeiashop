@@ -908,7 +908,7 @@ align-items: center;
 }
 .footer-brand-name {
 font-family: 'Bebas Neue', cursive;
-font-size: 3.5rem;
+font-size: 5rem;
 color: #ff00a9 !important;
 text-decoration: none;
 text-align: center;
@@ -1086,7 +1086,7 @@ align-items: center;
 }
 .footer-brand-name-mobile {
 font-family: 'Bebas Neue', cursive;
-font-size: 2rem;
+font-size: 2.5rem;
 color: #ff00a9 !important;
 text-decoration: none;
 text-align: center;
@@ -1108,7 +1108,7 @@ background-clip: text;
 }   
 .footer-brand-allrightreserved-mobile {
 font-family: 'Share Tech Mono', monospace;
-font-size: 0.7rem;
+font-size: 0.8rem;
 color: #00FFFF !important;
 text-decoration: none;
 line-height: 1.5;
@@ -1127,7 +1127,7 @@ margin: 0 0 10px 0;
 position: relative;
 z-index: 1;
 font-family: 'Share Tech Mono', monospace;
-font-size: 0.7rem;
+font-size: 0.8rem;
 color: #00FFFF !important;
 text-decoration: none;
 line-height: 1.5;  
