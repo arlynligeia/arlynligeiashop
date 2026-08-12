@@ -617,25 +617,28 @@ overflow-wrap: break-word;
 .home-container-mobile { display: block; }
 }
 
-
-
-
-
-
-
-
 /* ======================================
-   UNIVERSE PC
+   FILM
 ====================================== */
-.universe-container {
+.film-container {
 position: relative;
 width: 800px;
 background: #3f00a8 !important;
+border: 3px solid #b388ff;    
 border-radius: 0px;
-margin: 0px auto 40px auto;
+margin: 0px auto 50px auto;
 padding: 30px;
+/* CUADRÍCULA MORADA MÁS CLARA */
+background-image: 
+    linear-gradient(rgba(179, 136, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(179, 136, 255, 0.15) 1px, transparent 1px);
+background-size: 30px 30px;
+background-position: center center;  
 }
-.universe-container::before {
+
+
+
+.film-container::before {
 content: "";
 position: absolute;
 z-index: 1; 
@@ -646,7 +649,7 @@ height: 90px;
 background: #2a0070 !important;
 border-radius: 0px;
 }
-.universe-title {
+.film-title {
 position: relative;
 z-index: 2;
 display: block;
@@ -657,20 +660,20 @@ text-decoration: none;
 text-transform: uppercase;
 text-align: left;   
 line-height: 1.6;
-margin: 0 0 16px 0;
+margin: 0 0 16px 0;  
 }
-.universe-title a {
+.film-title a {
 color: #ff00a9 !important;
 text-decoration: none;
 }
 /* CONTENEDOR: INFORMACIÓN */
-.universe-information {
+.film-information {
 width: 100%;
 box-sizing: border-box;   
 margin: 0px;
 }
-.universe-information-text,
-.universe-information-text-end {
+.film-information-text,
+.film-information-text-end {
 font-family: 'Share Tech Mono', monospace;
 font-size: 1.25rem;
 color: #00FF00 !important;
@@ -679,27 +682,27 @@ text-align: justify;
 line-height: 1.5;
 margin: 0 0 10px 0;
 }
-.universe-information-text-end {
-text-align: right;
+.film-information-text-end {
 margin-bottom: 0px;
 }
 /* CONTROL */
-.universe-container { display: block; }
-.universe-container-mobile { display: none; }
+.film-container { display: block; }
+.film-container-mobile { display: none; }
 /* ======================================
-   MOVIL RESPONSIVE: UNIVERSE
+   MOVIL RESPONSIVE: FILM
 ====================================== */
 @media (max-width: 768px) {
-.universe-container-mobile {
+.film-container-mobile {
 position: relative;
 width: 90%;
 box-sizing: border-box;
 background: #3f00a8 !important;
+border: 3px solid #b388ff; 
 border-radius: 0px;
-margin: 0px auto 30px auto;
+margin: 0px auto 40px auto;
 padding: 20px;
 }
-.universe-container-mobile::before {
+.film-container-mobile::before {
 content: "";
 position: absolute;
 z-index: 1;
@@ -710,7 +713,7 @@ height: 60px;
 background: #2a0070 !important;
 border-radius: 0px;
 }
-.universe-title-mobile {
+.film-title-mobile {
 position: relative;
 z-index: 2;
 display: block;
@@ -722,35 +725,33 @@ text-transform: uppercase;
 text-align: center;
 margin: 0 0 10px 0; 
 }
-.universe-title-mobile a {
+.film-title-mobile a {
 color: #ff00a9 !important;
 text-decoration: none;
 }
 /* CONTENEDOR: INFORMACIÓN */
-.universe-information-mobile {
+.film-information-mobile {
 width: 100%;
 box-sizing: border-box; 
 margin: 0px;
 }
-.universe-information-text-mobile,
-.universe-information-text-end-mobile {
+.film-information-text-mobile,
+.film-information-text-end-mobile {
 font-family: 'Share Tech Mono', monospace;
 font-size: 1rem;
 color: #00FF00 !important;
 text-decoration: none;
+text-align: justify;   
 line-height: 1.5;
-text-align: justify;
 margin: 0 0 10px 0;
 }
-.universe-information-text-end-mobile {
-text-align: right;   
+.film-information-text-end-mobile {
 margin-bottom: 0px;
 }
 /* CONTROL */
-.universe-container { display: none; }
-.universe-container-mobile { display: block; }
+.film-container { display: none; }
+.film-container-mobile { display: block; }
 }
-
 
 
 
