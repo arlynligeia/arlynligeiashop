@@ -624,7 +624,7 @@ overflow-wrap: break-word;
   position: relative;
   width: 800px;
   background-color: #3f00a8; /* Fondo morado base */
-  border: 1px solid #b388ff; /* Borde más fino */
+  border: 2px solid #b388ff; /* Borde más fino */
   border-radius: 0px;
   margin: 0px auto 50px auto;
   padding: 30px;
@@ -632,25 +632,34 @@ overflow-wrap: break-word;
 
   /* CUADRÍCULA EN MORADO LIGERO / BLANCO SÚPER SUBTIL (1px) */
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 2px, transparent 2px);
   
   /* Tamaño de los cuadros (puedes ajustar de 30px a 50px si los quieres más grandes) */
   background-size: 40px 40px;
 }
 
 
+/* ENCABEZADO SUPERIOR (PSEUDO-ELEMENTO) */
 .film-container::before {
-content: "";
-position: absolute;
-z-index: 1; 
-top: 0;
-left: 0;
-width: 100%;
-height: 90px;
-background: #2a0070 !important;
-border-radius: 0px;
+  content: "";
+  position: absolute;
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #2a0070; /* Morado más oscuro */
+  border-bottom: 2px solid #b388ff; /* Separador sutil */
+
+  /* Misma cuadrícula para mantener continuidad */
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 2px, transparent 2px);
+  background-size: 40px 40px;
+  background-position: 0 0; /* Alineado para que encaje perfectamente con el contenedor principal */
 }
+
 .film-title {
 position: relative;
 z-index: 2;
