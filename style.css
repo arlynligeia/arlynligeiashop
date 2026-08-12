@@ -628,12 +628,12 @@ border: 3px solid #b388ff;
 border-radius: 0px;
 margin: 0px auto 50px auto;
 padding: 30px;
-/* CUADRÍCULA MORADA MÁS CLARA */
+/* CUADRÍCULA VERDE NEÓN */
 background-image: 
-    linear-gradient(rgba(179, 136, 255, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(179, 136, 255, 0.15) 1px, transparent 1px);
+    linear-gradient(rgba(0, 255, 0, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 0, 0.35) 1px, transparent 1px);
 background-size: 30px 30px;
-background-position: center center;  
+background-position: center center;
 }
 
 
