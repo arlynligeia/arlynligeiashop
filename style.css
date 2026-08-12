@@ -628,16 +628,13 @@ border: 3px solid #b388ff;
 border-radius: 0px;
 margin: 0px auto 50px auto;
 padding: 30px;
-/* CUADRÍCULA VERDE NEÓN */
+/* CUADRÍCULA VERDE NEÓN - MÁS VISIBLE */
 background-image: 
-    linear-gradient(rgba(0, 255, 0, 0.35) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 0, 0.35) 1px, transparent 1px);
+    repeating-linear-gradient(rgba(0, 255, 0, 0.5) 0px, rgba(0, 255, 0, 0.5) 2px, transparent 2px, transparent 30px),
+    repeating-linear-gradient(90deg, rgba(0, 255, 0, 0.5) 0px, rgba(0, 255, 0, 0.5) 2px, transparent 2px, transparent 30px);
 background-size: 30px 30px;
-background-position: center center;
+background-position: 0 0;
 }
-
-
-
 .film-container::before {
 content: "";
 position: absolute;
@@ -668,6 +665,8 @@ text-decoration: none;
 }
 /* CONTENEDOR: INFORMACIÓN */
 .film-information {
+position: relative;
+z-index: 2;
 width: 100%;
 box-sizing: border-box;   
 margin: 0px;
@@ -688,6 +687,15 @@ margin-bottom: 0px;
 /* CONTROL */
 .film-container { display: block; }
 .film-container-mobile { display: none; }
+
+
+
+
+
+
+
+
+
 /* ======================================
    MOVIL RESPONSIVE: FILM
 ====================================== */
