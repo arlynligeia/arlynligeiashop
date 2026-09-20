@@ -8,7 +8,7 @@ body {
     min-height: 100vh;
 }
 /* ======================================
-   RESPONSIVE — FONDO EN CELULAR
+   RESPONSIVE — FONDO
 ====================================== */
 @media (max-width: 768px) {
     body {
@@ -28,6 +28,7 @@ body {
     gap: 20px;
     padding: 20px 40px;
 }
+/* LOGO */
 .menu-logo {
     display: flex;
     align-items: center;
@@ -44,6 +45,7 @@ body.home .menu-logo {
 body.is-section .menu-logo {
     display: flex;
 }
+/* BOTONES */
 .menu-nav {
     display: inline-block;
     text-align: center;
@@ -113,9 +115,8 @@ body.is-section .menu-logo {
         0 0 10px #00FFFF,
         0 0 20px #00FFFF;
 }
-
 /* ======================================
-   RESPONSIVE — OCULTAR EN CELULAR
+   RESPONSIVE — OCULTAR EN MOBILE
 ====================================== */
 @media (max-width: 768px) {
     .menu {
@@ -143,6 +144,7 @@ body.is-section .menu-logo {
         padding: 15px 20px;
         box-sizing: border-box;
     }
+    /* BOTÓN HAMBURGUESA */
     .menu-mobile-toggle {
         position: relative;
         display: flex;
@@ -200,6 +202,7 @@ body.is-section .menu-logo {
             0 0 10px #00FFFF,
             0 0 20px #00FFFF;
     }
+    /* OVERLAY */
     .menu-mobile-nav {
         position: fixed;
         z-index: 1000;
@@ -240,6 +243,7 @@ body.is-section .menu-logo {
         display: block;
         color: #00FFFF;
     }
+    /* LOGO */
     .menu-mobile-logo {
         display: flex;
         align-items: center;
@@ -276,7 +280,7 @@ body.is-section .logo {
 }
 }
 /* ======================================
-   RESPONSIVE — OCULTAR EN CELULAR
+   RESPONSIVE — OCULTAR EN MOBILE
 ====================================== */
 @media (max-width: 768px) {
     .logo { display: none; }
@@ -429,8 +433,323 @@ body.is-section .logo {
 
 
 
-
-
-
-
-
+/* ======================================
+   FOOTER PC
+====================================== */
+.footer {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background: #2a0070 !important;
+    margin-top: auto;
+    padding: 30px;
+}
+/* LOGO Y COPYRIGHT */
+.footer-brand {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-brand-logo {
+    display: block;
+    text-align: center;
+    background: transparent !important;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    margin: 20px;
+    padding: 0;
+}
+.footer-brand-logo img {
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 450px;
+    height: auto;
+    display: inline-block;
+}
+.footer-brand-allrightreserved {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    color: #00FFFF !important;
+    text-decoration: none;
+    line-height: 1.5;
+    margin: 20px 0 10px 0;
+}
+/* LINKS */
+.footer-link {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 10px 0;
+}
+.footer-link-termsandconditions a,
+.footer-link-privacypolicy a,
+.footer-link-cookiepolicy a {
+    position: relative;
+    z-index: 1;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    color: #00FFFF !important;
+    text-decoration: none;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+    transition: all 0.3s ease;
+}
+.footer-link-termsandconditions a:hover::after,
+.footer-link-privacypolicy a:hover::after,
+.footer-link-cookiepolicy a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: #00FFFF !important;
+    transform: translateY(-50%);
+    animation: strike 0.3s ease forwards;
+}
+@keyframes strike {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+/* REDES SOCIALES */
+.footer-socialmedia {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 10px 0;
+}
+.footer-socialmedia-icon {
+    width: 25px;
+    height: 25px;
+    color: #ff00a9 !important;
+    transition: all 0.3s ease;
+}
+.footer-socialmedia-icon:hover {
+    transform: scale(1.2);
+}
+/* BOTÓN SCROLL TOP */
+.footer-button {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0px;
+}
+.footer-button-scrolltop {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: transparent !important;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #00FFFF !important;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0px;
+    padding: 10px 20px;
+    border: 2px solid #00FFFF !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.05) 2px,
+            rgba(255, 255, 255, 0.05) 4px
+        ) !important;
+    box-shadow:
+        0 0 5px #00FFFF,
+        inset 0 0 5px rgba(0, 255, 255, 0.3);
+}
+.footer-button-scrolltop:hover {
+    background: rgba(0, 255, 255, 0.1) !important;
+    color: #00FFFF !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 15px #00FFFF,
+        0 0 25px #00FFFF,
+        inset 0 0 10px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 10px #00FFFF;
+}
+.footer-button-scrolltop::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00FFFF;
+    box-shadow: 0 0 5px #00FFFF;
+    transition: all 0.3s ease;
+}
+.footer-button-scrolltop:hover::after {
+    box-shadow:
+        0 0 10px #00FFFF,
+        0 0 20px #00FFFF;
+}
+/* CONTROL */
+.footer { display: block; }
+.footer-mobile { display: none; }
+/* ======================================
+   RESPONSIVE: FOOTER
+====================================== */
+@media (max-width: 768px) {
+    .footer-mobile {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        background: #2a0070 !important;
+        padding: 20px;
+        margin-top: auto;
+    }
+    /* LOGO Y COPYRIGHT */
+    .footer-brand-mobile {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-brand-logo-mobile {
+        display: block;
+        text-align: center;
+        background: transparent !important;
+        margin: 20px;
+        padding: 0;
+    }
+    .footer-brand-logo-mobile img {
+        max-width: 100%;
+        box-sizing: border-box;
+        width: 250px;
+        height: auto;
+        display: inline-block;
+    }
+    .footer-brand-allrightreserved-mobile {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.8rem;
+        color: #00FFFF !important;
+        text-decoration: none;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+    }
+    /* LINKS */
+    .footer-link-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+    .footer-link-termsandconditions-mobile a,
+    .footer-link-privacypolicy-mobile a,
+    .footer-link-cookiepolicy-mobile a {
+        position: relative;
+        z-index: 1;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.8rem;
+        color: #00FFFF !important;
+        text-decoration: none;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+        transition: all 0.3s ease;
+    }
+    /* REDES SOCIALES */
+    .footer-socialmedia-mobile {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 10px 0;
+    }
+    .footer-socialmedia-icon-mobile {
+        width: 20px;
+        height: 20px;
+        color: #ff00a9 !important;
+        transition: all 0.3s ease;
+    }
+    .footer-socialmedia-icon-mobile:hover {
+        transform: scale(1.2);
+    }
+    /* BOTÓN SCROLL TOP */
+    .footer-button-mobile {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0px;
+    }
+    .footer-button-scrolltop-mobile {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 6px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0px;
+        padding: 10px 20px;
+        background: transparent !important;
+        color: #00FFFF !important;
+        text-decoration: none;
+        border: 2px solid #00FFFF !important;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background:
+            repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.05) 2px,
+                rgba(255, 255, 255, 0.05) 4px
+            ) !important;
+        box-shadow:
+            0 0 5px #00FFFF,
+            inset 0 0 5px rgba(0, 255, 255, 0.3);
+    }
+    .footer-button-scrolltop-mobile:hover {
+        background: rgba(0, 255, 255, 0.1) !important;
+        color: #00FFFF !important;
+        transform: translateY(-2px);
+        box-shadow:
+            0 0 15px #00FFFF,
+            0 0 25px #00FFFF,
+            inset 0 0 10px rgba(0, 255, 255, 0.5);
+        text-shadow: 0 0 10px #00FFFF;
+    }
+    .footer-button-scrolltop-mobile::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #00FFFF;
+        box-shadow: 0 0 5px #00FFFF;
+        transition: all 0.3s ease;
+    }
+    .footer-button-scrolltop-mobile:hover::after {
+        box-shadow:
+            0 0 10px #00FFFF,
+            0 0 20px #00FFFF;
+    }
+    /* CONTROL */
+    .footer { display: none; }
+    .footer-mobile { display: block; }
+}
