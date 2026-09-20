@@ -1,5 +1,5 @@
 body {
-    background-image: url("assets/Arlyn Ligeia Background.png");
+    background-image: url("assets/ARLYN-LIGEIA-fondo-web-horizontal-1920x1080.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,17 +8,13 @@ body {
     min-height: 100vh;
 }
 /* ======================================
-   FONDO MOBILE
+   RESPONSIVE — FONDO EN CELULAR
 ====================================== */
 @media (max-width: 768px) {
     body {
         background-image: url("assets/ARLYN-LIGEIA-fondo-web-vertical-1080x1920.png");
     }
 }
-
-
-
-
 
 /* ======================================
    MENÚ PC
