@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat+Brush&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Doto&family=Fuggles&family=Homemade+Apple&family=Orbitron:wght@700&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap');
 body {
     background-image: url("assets/Arlyn Ligeia Background.png");
     background-size: cover;
@@ -6,6 +7,103 @@ body {
     background-attachment: fixed;
     margin: 0;
     min-height: 100vh;
+}
+
+/* ======================================
+   MENÚ PC
+====================================== */
+.menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 40px;  
+}
+.menu-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.menu-logo img {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+.menu-nav {
+    display: inline-block;
+    text-align: center;
+}
+.menu-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+.menu-nav li {
+    position: relative;
+}
+.menu-nav a {
+    position: relative;
+    display: block;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.05) 2px,
+            rgba(255, 255, 255, 0.05) 4px
+        );
+    border: 2px solid #00FFFF;
+    color: #00FFFF;
+    box-shadow:
+        0 0 5px #00FFFF,
+        inset 0 0 5px rgba(0, 255, 255, 0.3);
+}
+.menu-nav a:hover {
+    background: rgba(0, 255, 255, 0.1);
+    color: #00FFFF;
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 15px #00FFFF,
+        0 0 25px #00FFFF,
+        inset 0 0 10px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 10px #00FFFF;
+}
+.menu-nav a::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00FFFF;
+    box-shadow: 0 0 5px #00FFFF;
+    transition: all 0.3s ease;
+}
+.menu-nav a:hover::after {
+    box-shadow:
+        0 0 10px #00FFFF,
+        0 0 20px #00FFFF;
+}
+/* ======================================
+   RESPONSIVE — OCULTAR EN CELULAR
+====================================== */
+@media (max-width: 768px) {
+    .menu {display: none;}
 }
 
 /* ======================================
@@ -28,6 +126,9 @@ body {
 .logo.hidden {
     display: none !important;
 }
+/* ======================================
+   RESPONSIVE — OCULTAR EN CELULAR
+====================================== */
 @media (max-width: 768px) {
 .logo { display: none; }
 }
