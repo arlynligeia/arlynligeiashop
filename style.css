@@ -30,6 +30,9 @@ body {
     height: auto;
     display: block;
 }
+body.home .menu-logo {
+    display: none;
+}
 .menu-nav {
     display: inline-block;
     text-align: center;
