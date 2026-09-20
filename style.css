@@ -110,20 +110,18 @@ body.home .menu-logo {
 }
 
 /* ======================================
-   MENÚ HAMBURGUESA MOBILE
+   MENÚ MOBILE
 ====================================== */
-.menu-mobile {
-    display: none;
-}
+.menu-mobile {display: none;}
 @media (max-width: 768px) {
     .menu-mobile {
         display: flex;
+        flex-direction: row-reverse;
         align-items: center;
         justify-content: space-between;
         padding: 15px 20px;
         box-sizing: border-box;
     }
-/* --- Botón hamburguesa --- */
 .menu-mobile-toggle {
     position: relative;
     display: flex;
@@ -149,7 +147,6 @@ body.home .menu-logo {
         0 0 5px #00FFFF,
         inset 0 0 5px rgba(0, 255, 255, 0.3);
 }
-
 .menu-mobile-toggle span {
     display: block;
     width: 25px;
@@ -157,7 +154,6 @@ body.home .menu-logo {
     background: #00FFFF;
     transition: all 0.3s ease;
 }
-
 .menu-mobile-toggle:hover {
     background: rgba(0, 255, 255, 0.1);
     transform: translateY(-2px);
@@ -166,7 +162,6 @@ body.home .menu-logo {
         0 0 25px #00FFFF,
         inset 0 0 10px rgba(0, 255, 255, 0.5);
 }
-
 .menu-mobile-toggle::after {
     content: '';
     position: absolute;
@@ -179,14 +174,11 @@ body.home .menu-logo {
     box-shadow: 0 0 5px #00FFFF;
     transition: all 0.3s ease;
 }
-
 .menu-mobile-toggle:hover::after {
     box-shadow:
         0 0 10px #00FFFF,
         0 0 20px #00FFFF;
 }
-
-/* --- Overlay (menú desplegable) --- */
 .menu-mobile-nav {
     position: fixed;
     z-index: 1000;
@@ -197,11 +189,9 @@ body.home .menu-logo {
     background: #2a0070;
     display: none;
 }
-
 .menu-mobile-nav.active {
     display: block;
 }
-
 .menu-mobile-nav ul {
     list-style: none;
     padding: 0;
@@ -212,17 +202,14 @@ body.home .menu-logo {
     justify-content: center;
     align-items: center;
 }
-
 .menu-mobile-nav li {
     text-align: center;
     border-bottom: 1px solid #FF66CC;
     padding: 12px 0;
 }
-
 .menu-mobile-nav li:last-child {
     border-bottom: none;
 }
-
 .menu-mobile-nav a {
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
@@ -232,20 +219,16 @@ body.home .menu-logo {
     display: block;
     color: #00FFFF;
 }
-
-/* --- Logo dentro del menú mobile --- */
 .menu-mobile-logo {
     display: flex;
     align-items: center;
 }
-
 .menu-mobile-logo img {
     height: 40px;
     width: auto;
     display: block;
 }
 }
-
 
 
 
