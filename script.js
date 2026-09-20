@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('[id^="home-"]').forEach(subsection => {
             subsection.style.display = 'block';
         });
+
+        // Quitar la clase is-section al volver a Home
+        document.body.classList.remove('is-section');
     }
 
     // FUNCIÓN: NAVEGAR A UNA SECCIÓN
@@ -37,6 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             mainSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Si NO es home, activar is-section; si es home, quitarla
+            if (sectionId === 'home') {
+                document.body.classList.remove('is-section');
+            } else {
+                document.body.classList.add('is-section');
+            }
         }
     }
 
