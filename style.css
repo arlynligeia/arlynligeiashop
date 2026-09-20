@@ -278,13 +278,11 @@ body.is-section .logo {
 .logo.hidden {
     display: none !important;
 }
-}
 /* ======================================
    RESPONSIVE — OCULTAR EN MOBILE
 ====================================== */
 @media (max-width: 768px) {
     .logo { display: none; }
-}
 }
 
 
