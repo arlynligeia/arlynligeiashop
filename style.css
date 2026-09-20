@@ -324,6 +324,10 @@ body.is-section .menu-logo {
     height: auto;
     display: inline-block;
 }
+/* --- Logo grande oculto cuando estamos en una sección --- */
+body.is-section .logo {
+    display: none;
+}
 .logo.hidden {
     display: none !important;
 }
