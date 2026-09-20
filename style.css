@@ -285,6 +285,234 @@ body.is-section .logo {
     .logo { display: none; }
 }
 
+/* ======================================
+   HOME
+====================================== */
+.home-container {
+    position: relative;
+    width: 800px;
+    background: #3f00a8 !important;
+    border: 3px solid #b388ff;
+    border-radius: 0px;
+    margin: 50px auto 50px auto;
+    padding: 30px;
+}
+.home-container::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: #2a0070 !important;
+    border-radius: 0px;
+}
+.home-container-title {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #ff00a9 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+.home-container-title a {
+    color: #ff00a9 !important;
+    text-decoration: none;
+}
+/* COLUMNAS */
+.home-container-columns {
+    position: relative;
+    z-index: 2;
+}
+/* GRID DE 2 */
+.home-container-columns-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 0px;
+}
+/* COLUMNA 1 - IMAGEN */
+.home-container-columns-grid-image {
+    width: 100%;
+    min-width: 0;
+    margin: 0px;
+}
+.home-container-columns-grid-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0px;
+}
+/* COLUMNA 2 - TEXTO */
+.home-container-columns-grid-information {
+    width: 100%;
+    min-width: 0;
+    margin: 0px;
+}
+.home-container-columns-grid-information-subtitle {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5rem;
+    color: #00FF00 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+.home-container-columns-grid-information-subtitle-2 {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-family: 'Doto', sans-serif;
+    font-size: 1.4rem;
+    color: #ffffff !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+.home-container-columns-grid-information-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.25rem;
+    color: #00FF00 !important;
+    text-decoration: none;
+    text-align: left;
+    line-height: 1.5;
+    margin: 0px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+/* CONTROL */
+.home-container { display: block; }
+.home-container-mobile { display: none; }
+/* ======================================
+   RESPONSIVE: HOME
+====================================== */
+@media (max-width: 768px) {
+    .home-container-mobile {
+        position: relative;
+        width: 90%;
+        box-sizing: border-box;
+        background: #3f00a8 !important;
+        border: 3px solid #b388ff;
+        border-radius: 0px;
+        margin: 500px auto 40px auto;
+        padding: 20px;
+    }
+    .home-container-mobile::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #2a0070 !important;
+        border-radius: 0px;
+    }
+    .home-container-title-mobile {
+        position: relative;
+        z-index: 2;
+        display: block;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        color: #ff00a9 !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+    .home-container-title-mobile a {
+        color: #ff00a9 !important;
+        text-decoration: none;
+    }
+    /* IMAGEN */
+    .home-container-image-mobile {
+        width: 100%;
+        min-width: 0;
+        margin: 0 0 10px 0;
+    }
+    .home-container-image-mobile img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0px;
+    }
+    /* INFORMACIÓN */
+    .home-container-information-mobile {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0px;
+    }
+    .home-container-information-subtitle-mobile {
+        position: relative;
+        z-index: 2;
+        display: block;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1.3rem;
+        color: #00FF00 !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+    }
+    .home-container-information-subtitle-2-mobile {
+        position: relative;
+        z-index: 2;
+        display: block;
+        font-family: 'Doto', sans-serif;
+        font-size: 1.2rem;
+        color: #ffffff !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+    }
+    .home-container-information-text-mobile {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1rem;
+        color: #00FF00 !important;
+        text-decoration: none;
+        line-height: 1.5;
+        text-align: left;
+        margin: 0px;
+    }
+    /* CONTROL */
+    .home-container { display: none; }
+    .home-container-mobile { display: block; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
