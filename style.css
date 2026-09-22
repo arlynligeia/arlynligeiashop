@@ -2242,6 +2242,159 @@ body.is-section .logo {
 }
 
 
+/* ======================================
+   SS COLLECTION
+====================================== */
+
+
+/* ======================================
+   FW COLLECTION
+====================================== */
+
+
+/* ======================================
+   CAPSULE COLLECTION
+====================================== */
+
+
+/* ======================================
+   RESORT COLLECTION
+====================================== */
+
+
+/* ======================================
+   BE MY PATRON
+====================================== */
+.bemypatron-container {
+    position: relative;
+    width: 800px;
+    background: #3f00a8 !important;
+    border: 3px solid #b388ff;
+    border-radius: 0px;
+    margin: 0px auto 50px auto;
+    padding: 30px;
+}
+.bemypatron-container::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: #2a0070 !important;
+    border-radius: 0px;
+}
+.bemypatron-title {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #ff00a9 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+.bemypatron-title a {
+    color: #ff00a9 !important;
+    text-decoration: none;
+}
+/* INFORMACIÓN */
+.bemypatron-information {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.bemypatron-text,
+.bemypatron-text-end {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.25rem;
+    color: #00FF00 !important;
+    text-decoration: none;
+    text-align: left;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+.bemypatron-text-end {
+    text-align: right;
+    margin-bottom: 0px;
+}
+/* CONTROL */
+.bemypatron-container { display: block; }
+.bemypatron-container-mobile { display: none; }
+/* ======================================
+   MOVIL RESPONSIVE: BE MY PATRON
+====================================== */
+@media (max-width: 768px) {
+    .bemypatron-container-mobile {
+        position: relative;
+        width: 90%;
+        box-sizing: border-box;
+        background: #3f00a8 !important;
+        border: 3px solid #b388ff;
+        border-radius: 0px;
+        margin: 0px auto 30px auto;
+        padding: 20px;
+    }
+    .bemypatron-container-mobile::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #2a0070 !important;
+        border-radius: 0px;
+    }
+    .bemypatron-title-mobile {
+        position: relative;
+        z-index: 2;
+        display: block;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        color: #ff00a9 !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+    .bemypatron-title-mobile a {
+        color: #ff00a9 !important;
+        text-decoration: none;
+    }
+    /* INFORMACIÓN */
+    .bemypatron-information-mobile {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0px;
+    }
+    .bemypatron-text-mobile,
+    .bemypatron-text-end-mobile {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1rem;
+        color: #00FF00 !important;
+        text-decoration: none;
+        text-align: left;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+    }
+    .bemypatron-text-end-mobile {
+        text-align: right;
+        margin-bottom: 0px;
+    }
+    /* CONTROL */
+    .bemypatron-container { display: none; }
+    .bemypatron-container-mobile { display: block; }
+}
+
+
+
+
+
 
 
 
