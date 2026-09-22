@@ -2392,6 +2392,240 @@ body.is-section .logo {
 }
 
 
+/* ======================================
+   CONTACT
+====================================== */
+.contact-container {
+    position: relative;
+    width: 550px;
+    background: #3f00a8 !important;
+    border: 3px solid #b388ff;
+    border-radius: 0px;
+    margin: 0px auto 50px auto;
+    padding: 30px;
+}
+.contact-container::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: #2a0070 !important;
+    border-radius: 0px;
+}
+.contact-title {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #ff00a9 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+.contact-title a {
+    color: #ff00a9 !important;
+    text-decoration: none;
+}
+/* FORMULARIO */
+.contact-form {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin: 0px;
+}
+/* TEXTOS SOBRE LAS CAJAS */
+.contact-label {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: #00FF00 !important;
+    text-decoration: none;
+    margin: 0 0 5px 0;
+}
+/* CAJAS CON TEXTOS */
+.contact-input,
+.contact-textarea {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    background: #00FFFF !important;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.25rem;
+    color: black !important;
+    text-decoration: none;
+    text-align: left;
+    margin: 0 0 15px 0;
+    padding: 10px;
+}
+.contact-textarea {
+    height: 150px;
+    resize: vertical;
+    margin-bottom: 20px;
+}
+/* CASILLA TOPIC */
+.contact-topic {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+}
+/* BOTÓN */
+.contact-button {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+.contact-submit {
+    display: flex;
+    justify-content: center;
+    background: #ff1493 !important;
+    border: 2px solid #ffffff;
+    border-radius: 6px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: white !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.contact-submit:hover {
+    transform: scale(1.05);
+}
+/* CONTROL DISPLAY ESCRITORIO/MÓVIL */
+.contact-container { display: block; }
+.contact-container-mobile { display: none; }
+/* ======================================
+   MOVIL RESPONSIVE: CONTACT
+====================================== */
+@media (max-width: 768px) {
+    .contact-container-mobile {
+        position: relative;
+        width: 90%;
+        box-sizing: border-box;
+        background: #3f00a8 !important;
+        border: 3px solid #b388ff;
+        border-radius: 0px;
+        margin: 0px auto 40px auto;
+        padding: 20px;
+    }
+    .contact-container-mobile::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #2a0070 !important;
+        border-radius: 0px;
+    }
+    .contact-title-mobile {
+        position: relative;
+        z-index: 2;
+        display: block;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        color: #ff00a9 !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+    .contact-title-mobile a {
+        color: #ff00a9 !important;
+        text-decoration: none;
+    }
+    /* FORMULARIO */
+    .contact-form-mobile {
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+        margin: 0px;
+    }
+    /* TEXTOS SOBRE LAS CAJAS */
+    .contact-label-mobile {
+        display: block;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1rem;
+        color: #00FF00 !important;
+        text-decoration: none;
+        margin: 0 0 5px 0;
+    }
+    /* CAJAS CON TEXTOS */
+    .contact-input-mobile,
+    .contact-textarea-mobile {
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box;
+        background: #00FFFF !important;
+        border: 2px solid #000000;
+        border-radius: 6px;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1rem;
+        color: black !important;
+        text-decoration: none;
+        text-align: left;
+        margin: 0 0 15px 0;
+        padding: 10px;
+    }
+    .contact-textarea-mobile {
+        height: 150px;
+        resize: vertical;
+        margin-bottom: 20px;
+    }
+    /* CASILLA TOPIC MOBILE */
+    .contact-topic-mobile {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0px;
+    }
+    /* BOTÓN */
+    .contact-button-mobile {
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+        text-align: center;
+        margin: 0px;
+    }
+    .contact-submit-mobile {
+        display: inline-block;
+        background-color: #ff1493 !important;
+        border: 2px solid #ffffff;
+        border-radius: 6px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1rem;
+        color: white !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        margin: 0px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    .contact-submit-mobile:hover {
+        transform: scale(1.05);
+    }
+    /* CONTROL DISPLAY ESCRITORIO/MÓVIL */
+    .contact-container { display: none; }
+    .contact-container-mobile { display: block; }
+}
+
+
 
 
 
