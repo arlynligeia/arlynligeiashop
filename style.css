@@ -1971,10 +1971,275 @@ body.is-section .logo {
 }
 
 
+/* ======================================
+   SHORT FILM PC
+====================================== */
 
 
+/* ======================================
+   MUSIC
+====================================== */
+.music-container {
+    position: relative;
+    width: 800px;
+    background: #3f00a8 !important;
+    border: 3px solid #b388ff;
+    border-radius: 0px;
+    margin: 0px auto 50px auto;
+    padding: 30px;
+}
+.music-container::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: #2a0070 !important;
+    border-radius: 0px;
+}
+.music-title {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #ff00a9 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+.music-title a {
+    color: #ff00a9 !important;
+    text-decoration: none;
+}
+/* INFORMACIÓN */
+.music-information {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.music-text,
+.music-text-end {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.25rem;
+    color: #00FF00 !important;
+    text-decoration: none;
+    text-align: justify;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+.music-text-end {
+    margin-bottom: 0px;
+}
+/* CONTROL */
+.music-container { display: block; }
+.music-container-mobile { display: none; }
+/* ======================================
+   MOVIL RESPONSIVE: MUSIC
+====================================== */
+@media (max-width: 768px) {
+    .music-container-mobile {
+        position: relative;
+        width: 90%;
+        box-sizing: border-box;
+        background: #3f00a8 !important;
+        border: 3px solid #b388ff;
+        border-radius: 0px;
+        margin: 0px auto 40px auto;
+        padding: 20px;
+    }
+    .music-container-mobile::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #2a0070 !important;
+        border-radius: 0px;
+    }
+    .music-title-mobile {
+        position: relative;
+        z-index: 2;
+        display: block;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        color: #ff00a9 !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+    .music-title-mobile a {
+        color: #ff00a9 !important;
+        text-decoration: none;
+    }
+    /* INFORMACIÓN */
+    .music-information-mobile {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0px;
+    }
+    .music-text-mobile,
+    .music-text-end-mobile {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1rem;
+        color: #00FF00 !important;
+        text-decoration: none;
+        text-align: justify;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+    }
+    .music-text-end-mobile {
+        margin-bottom: 0px;
+    }
+    /* CONTROL */
+    .music-container { display: none; }
+    .music-container-mobile { display: block; }
+}
 
 
+/* ======================================
+   SINGLES PC
+====================================== */
+
+
+/* ======================================
+   ALBUM PC
+====================================== */
+
+
+/* ======================================
+   FASHION
+====================================== */
+.fashion-container {
+    position: relative;
+    width: 800px;
+    background: #3f00a8 !important;
+    border: 3px solid #b388ff;
+    border-radius: 0px;
+    margin: 0px auto 50px auto;
+    padding: 30px;
+}
+.fashion-container::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: #2a0070 !important;
+    border-radius: 0px;
+}
+.fashion-title {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #ff00a9 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+.fashion-title a {
+    color: #ff00a9 !important;
+    text-decoration: none;
+}
+/* INFORMACIÓN */
+.fashion-information {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.fashion-text,
+.fashion-text-end {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.25rem;
+    color: #00FF00 !important;
+    text-decoration: none;
+    text-align: justify;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+.fashion-text-end {
+    margin-bottom: 0px;
+}
+/* CONTROL */
+.fashion-container { display: block; }
+.fashion-container-mobile { display: none; }
+/* ======================================
+   MOVIL RESPONSIVE: FASHION
+====================================== */
+@media (max-width: 768px) {
+    .fashion-container-mobile {
+        position: relative;
+        width: 90%;
+        box-sizing: border-box;
+        background: #3f00a8 !important;
+        border: 3px solid #b388ff;
+        border-radius: 0px;
+        margin: 0px auto 40px auto;
+        padding: 20px;
+    }
+    .fashion-container-mobile::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #2a0070 !important;
+        border-radius: 0px;
+    }
+    .fashion-title-mobile {
+        position: relative;
+        z-index: 2;
+        display: block;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        color: #ff00a9 !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+    .fashion-title-mobile a {
+        color: #ff00a9 !important;
+        text-decoration: none;
+    }
+    /* INFORMACIÓN */
+    .fashion-information-mobile {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0px;
+    }
+    .fashion-text-mobile,
+    .fashion-text-end-mobile {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1rem;
+        color: #00FF00 !important;
+        text-decoration: none;
+        text-align: justify;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+    }
+    .fashion-text-end-mobile {
+        margin-bottom: 0px;
+    }
+    /* CONTROL */
+    .fashion-container { display: none; }
+    .fashion-container-mobile { display: block; }
+}
 
 
 
