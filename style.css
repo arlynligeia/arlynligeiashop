@@ -1234,7 +1234,139 @@ body.is-section .logo {
 }
 
 
-
+/* ======================================
+   FEATURE FILM
+====================================== */
+.featurefilm-container {
+    position: relative;
+    width: 550px;
+    background: #3f00a8 !important;
+    border: 3px solid #b388ff;
+    border-radius: 0px;
+    margin: 40px auto;
+    padding: 30px;
+}
+.featurefilm-container::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: #2a0070 !important;
+    border-radius: 0px;
+}
+.featurefilm-title {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #ff00a9 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+.featurefilm-title a {
+    color: #ff00a9 !important;
+    text-decoration: none;
+}
+/* TARJETAS */
+.featurefilm-cards {
+    position: relative;
+    z-index: 2;
+}
+/* TARJETA */
+.featurefilm-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.featurefilm-card img {
+    width: 80%;
+    max-width: 400px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.featurefilm-card img:hover {
+    transform: scale(1.1);
+}
+/* CONTROL */
+.featurefilm-container { display: block; }
+.featurefilm-container-mobile { display: none; }
+/* ======================================
+   MOVIL RESPONSIVE: FEATURE FILM
+====================================== */
+@media (max-width: 768px) {
+    .featurefilm-container-mobile {
+        position: relative;
+        width: 90%;
+        box-sizing: border-box;
+        background: #3f00a8 !important;
+        border: 3px solid #b388ff;
+        border-radius: 0px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+    .featurefilm-container-mobile::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #2a0070 !important;
+        border-radius: 0px;
+    }
+    .featurefilm-title-mobile {
+        position: relative;
+        z-index: 2;
+        display: block;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        color: #ff00a9 !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+    .featurefilm-title-mobile a {
+        color: #ff00a9 !important;
+        text-decoration: none;
+    }
+    /* TARJETAS */
+    .featurefilm-cards-mobile {
+        position: relative;
+        z-index: 2;
+    }
+    /* TARJETA */
+    .featurefilm-card-mobile {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        text-decoration: none;
+        margin-bottom: 0px;
+    }
+    .featurefilm-card-mobile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .featurefilm-card-mobile img:hover {
+        transform: scale(1.1);
+    }
+    /* CONTROL */
+    .featurefilm-container { display: none; }
+    .featurefilm-container-mobile { display: block; }
+}
 
 
 
