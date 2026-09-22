@@ -284,11 +284,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (type && wrapper && topic) {
         type.addEventListener('change', function () {
             if (this.value === 'work') {
-                wrapper.style.display = 'block';
+                wrapper.classList.add('is-visible');
                 topic.setAttribute('required', 'required');
                 topic.removeAttribute('disabled');
             } else {
-                wrapper.style.display = 'none';
+                wrapper.classList.remove('is-visible');
                 topic.removeAttribute('required');
                 topic.value = '';
                 topic.setAttribute('disabled', 'disabled');
@@ -308,11 +308,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (type && wrapper && topic) {
         type.addEventListener('change', function () {
             if (this.value === 'work') {
-                wrapper.style.display = 'block';
+                wrapper.classList.add('is-visible');
                 topic.setAttribute('required', 'required');
                 topic.removeAttribute('disabled');
             } else {
-                wrapper.style.display = 'none';
+                wrapper.classList.remove('is-visible');
                 topic.removeAttribute('required');
                 topic.value = '';
                 topic.setAttribute('disabled', 'disabled');
