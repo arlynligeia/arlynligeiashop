@@ -2475,6 +2475,10 @@ body.is-section .logo {
     width: 100%;
     box-sizing: border-box;
     margin: 0px;
+    display: none;
+}
+.contact-topic.is-visible {
+    display: block;
 }
 /* BOTÓN */
 .contact-button {
@@ -2591,6 +2595,10 @@ body.is-section .logo {
         width: 100%;
         box-sizing: border-box;
         margin: 0px;
+        display: none;
+    }
+    .contact-topic-mobile.is-visible {
+        display: block;
     }
     /* BOTÓN */
     .contact-button-mobile {
@@ -2624,7 +2632,6 @@ body.is-section .logo {
     .contact-container { display: none; }
     .contact-container-mobile { display: block; }
 }
-
 
 
 
