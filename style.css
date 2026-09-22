@@ -499,31 +499,6 @@ body.is-section .logo {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ======================================
    SOCIAL MEDIA CONTENT
 ====================================== */
@@ -547,7 +522,7 @@ body.is-section .logo {
     background: #2a0070 !important;
     border-radius: 0px;
 }
-.socialmediacontent-container-title {
+.socialmediacontent-title {
     position: relative;
     z-index: 2;
     display: block;
@@ -560,50 +535,49 @@ body.is-section .logo {
     line-height: 1.6;
     margin: 0 0 16px 0;
 }
-.socialmediacontent-container-title a {
+.socialmediacontent-title a {
     color: #ff00a9 !important;
     text-decoration: none;
 }
-/* CONTENEDOR: TABLA */
-.socialmediacontent-container-table {
+/* TABLA */
+.socialmediacontent-table {
     width: 100%;
     box-sizing: border-box;
     margin: 0px;
 }
-.socialmediacontent-container-table-wrapper {
+.socialmediacontent-wrapper {
     width: 100%;
     table-layout: fixed;
     border-collapse: separate;
     border-spacing: 10;
     background-color: transparent;
 }
-.socialmediacontent-container-table-wrapper th:nth-child(1),
-.socialmediacontent-container-table-wrapper td:nth-child(1) {
+.socialmediacontent-wrapper th:nth-child(1),
+.socialmediacontent-wrapper td:nth-child(1) {
     width: 20%;
 }
-
-.socialmediacontent-container-table-wrapper th:nth-child(2),
-.socialmediacontent-container-table-wrapper td:nth-child(2) {
+.socialmediacontent-wrapper th:nth-child(2),
+.socialmediacontent-wrapper td:nth-child(2) {
     width: 45%;
 }
-.socialmediacontent-container-table-wrapper th:nth-child(3),
-.socialmediacontent-container-table-wrapper td:nth-child(3) {
+.socialmediacontent-wrapper th:nth-child(3),
+.socialmediacontent-wrapper td:nth-child(3) {
     width: 35%;
 }
-/* TABLA: ENCABEZADOS */
-.socialmediacontent-container-table-wrapper-head {
+/* ENCABEZADOS */
+.socialmediacontent-head {
     width: 100%;
     margin: 0px;
 }
-.socialmediacontent-container-table-wrapper-head-row {
+.socialmediacontent-row {
     vertical-align: middle;
 }
-.socialmediacontent-container-table-wrapper-head-row th {
+.socialmediacontent-head th {
     width: 100%;
     box-sizing: border-box;
     padding: 0px;
 }
-.socialmediacontent-container-table-wrapper-head-row-cell-box {
+.socialmediacontent-box {
     width: 100%;
     height: 40px;
     box-sizing: border-box;
@@ -616,7 +590,7 @@ body.is-section .logo {
     margin: 0px;
     padding: 10px;
 }
-.socialmediacontent-container-table-wrapper-head-row-cell-box-subtitle {
+.socialmediacontent-subtitle {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.2rem;
     color: #ff00a9 !important;
@@ -626,24 +600,21 @@ body.is-section .logo {
     margin: 0px;
     padding: 0px;
 }
-/* TABLA: CUERPO */
-.socialmediacontent-container-table-wrapper-body {
+/* CUERPO */
+.socialmediacontent-body {
     width: 100%;
     margin: 0px;
 }
-.socialmediacontent-container-table-wrapper-body-row {
-    vertical-align: middle;
-}
-/* TABLA: CUERPO - BOTONES */
-.socialmediacontent-container-table-wrapper-body-row-cell-button {
+/* BOTONES */
+.socialmediacontent-button {
     width: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.socialmediacontent-container-table-wrapper-body-row-cell-button-tiktok,
-.socialmediacontent-container-table-wrapper-body-row-cell-button-youtube {
+.socialmediacontent-tiktok,
+.socialmediacontent-youtube {
     width: 100%;
     height: 40px;
     box-sizing: border-box;
@@ -665,12 +636,12 @@ body.is-section .logo {
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-.socialmediacontent-container-table-wrapper-body-row-cell-button-tiktok:hover,
-.socialmediacontent-container-table-wrapper-body-row-cell-button-youtube:hover {
+.socialmediacontent-tiktok:hover,
+.socialmediacontent-youtube:hover {
     transform: scale(1.05);
 }
-/* CONTENEDOR: CUERPO - CAJAS */
-.socialmediacontent-container-table-wrapper-body-row-cell-box {
+/* CAJAS DEL CUERPO */
+.socialmediacontent-box-2 {
     width: 100%;
     height: 40px;
     box-sizing: border-box;
@@ -683,8 +654,7 @@ body.is-section .logo {
     margin: 0px;
     padding: 10px;
 }
-
-.socialmediacontent-container-table-wrapper-body-row-cell-box-text {
+.socialmediacontent-text {
     font-family: 'Share Tech Mono', monospace;
     font-size: 1.25rem;
     color: black !important;
@@ -693,7 +663,17 @@ body.is-section .logo {
 }
 /* CONTROL */
 .socialmediacontent-container { display: block; }
-.socialmediacontent-container-mobile { display: none; }
+
+
+
+
+
+
+
+
+
+
+
 /* ======================================
    MOVIL RESPONSIVE: SOCIAL MEDIA CONTENT
 ====================================== */
