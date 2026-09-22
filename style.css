@@ -663,19 +663,9 @@ body.is-section .logo {
 }
 /* CONTROL */
 .socialmediacontent-container { display: block; }
-
-
-
-
-
-
-
-
-
-
-
+.socialmediacontent-container-mobile { display: none; }
 /* ======================================
-   MOVIL RESPONSIVE: SOCIAL MEDIA CONTENT
+   RESPONSIVE: SOCIAL MEDIA CONTENT
 ====================================== */
 @media (max-width: 768px) {
     .socialmediacontent-container-mobile {
@@ -699,7 +689,7 @@ body.is-section .logo {
         background: #2a0070 !important;
         border-radius: 0px;
     }
-    .socialmediacontent-container-title-mobile {
+    .socialmediacontent-title-mobile {
         position: relative;
         z-index: 2;
         display: block;
@@ -710,26 +700,26 @@ body.is-section .logo {
         text-align: center;
         margin: 0 0 10px 0;
     }
-    .socialmediacontent-container-title-mobile a {
+    .socialmediacontent-title-mobile a {
         color: #ff00a9 !important;
         text-decoration: none;
     }
-    /* CONTENEDOR: CONTENIDO */
-    .socialmediacontent-container-content-mobile {
+    /* INFORMACIÓN */
+    .socialmediacontent-information-mobile {
         width: 100%;
         box-sizing: border-box;
         display: block;
         margin: 0px;
     }
-    /* CONTENEDOR: BOTON */
-    .socialmediacontent-container-content-button-mobile {
+    /* BOTÓN */
+    .socialmediacontent-button-mobile {
         width: 100%;
         display: block;
         text-align: center;
         margin: 0px;
     }
-    .socialmediacontent-container-content-button-tiktok-mobile,
-    .socialmediacontent-container-content-button-youtube-mobile {
+    .socialmediacontent-tiktok-mobile,
+    .socialmediacontent-youtube-mobile {
         display: inline-block;
         background: #ff00a9 !important;
         border: 2px solid #ffffff;
@@ -746,12 +736,12 @@ body.is-section .logo {
         cursor: pointer;
         transition: all 0.3s ease;
     }
-    .socialmediacontent-container-content-button-tiktok-mobile:hover,
-    .socialmediacontent-container-content-button-youtube-mobile:hover {
+    .socialmediacontent-tiktok-mobile:hover,
+    .socialmediacontent-youtube-mobile:hover {
         transform: scale(1.05);
     }
-    /* CONTENEDOR: CAJAS */
-    .socialmediacontent-container-content-box-mobile {
+    /* CAJAS */
+    .socialmediacontent-box-mobile {
         width: 100%;
         height: 40px;
         box-sizing: border-box;
@@ -763,8 +753,8 @@ body.is-section .logo {
         margin: 0 0 10px 0;
         padding: 10px;
     }
-    /* CONTENEDOR: TEXTO */
-    .socialmediacontent-container-content-box-text-mobile {
+    /* TEXTO */
+    .socialmediacontent-text-mobile {
         font-family: 'Share Tech Mono', monospace;
         font-size: 1rem;
         color: black !important;
@@ -772,7 +762,7 @@ body.is-section .logo {
         text-align: center;
     }
     /* DIVISOR */
-    .socialmediacontent-container-content-divider-mobile {
+    .socialmediacontent-divider-mobile {
         width: 100%;
         height: 0;
         border-top: 3px solid #ff00a9 !important;
@@ -782,6 +772,31 @@ body.is-section .logo {
     .socialmediacontent-container { display: none; }
     .socialmediacontent-container-mobile { display: block; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ======================================
    TIKTOK HIGHTLIGHTS
