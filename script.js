@@ -274,45 +274,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* ======================================
-   CONTACT: MOSTRAR TOPIC SOLO SI ELIGEN "WORK"
+   CONTACT PC
 ====================================== */
+(function () {
+    const type = document.getElementById('contact-type');
+    const wrapper = document.getElementById('contact-wrapper');
+    const topic = document.getElementById('contact-topic');
 
-// ========== PC ==========
-const contactTypePC = document.getElementById('contact-type');
-const contactWrapperPC = document.getElementById('contact-wrapper');
-const contactTopicPC = document.getElementById('contact-topic');
+    if (type && wrapper && topic) {
+        type.addEventListener('change', function () {
+            if (this.value === 'work') {
+                wrapper.style.display = 'block';
+                topic.setAttribute('required', 'required');
+                topic.removeAttribute('disabled');
+            } else {
+                wrapper.style.display = 'none';
+                topic.removeAttribute('required');
+                topic.value = '';
+                topic.setAttribute('disabled', 'disabled');
+            }
+        });
+    }
+})();
 
-if (contactTypePC && contactWrapperPC && contactTopicPC) {
-    contactTypePC.addEventListener('change', function () {
-        if (this.value === 'work') {
-            contactWrapperPC.style.display = 'block';
-            contactTopicPC.setAttribute('required', 'required');
-            contactTopicPC.removeAttribute('disabled');
-        } else {
-            contactWrapperPC.style.display = 'none';
-            contactTopicPC.removeAttribute('required');
-            contactTopicPC.value = '';
-            contactTopicPC.setAttribute('disabled', 'disabled');
-        }
-    });
-}
+/* ======================================
+   CONTACT MOBILE
+====================================== */
+(function () {
+    const type = document.getElementById('contact-type-mobile');
+    const wrapper = document.getElementById('contact-wrapper-mobile');
+    const topic = document.getElementById('contact-topic-mobile');
 
-// ========== MOBILE ==========
-const contactTypeMobile = document.getElementById('contact-type-mobile');
-const contactWrapperMobile = document.getElementById('contact-wrapper-mobile');
-const contactTopicMobile = document.getElementById('contact-topic-mobile');
-
-if (contactTypeMobile && contactWrapperMobile && contactTopicMobile) {
-    contactTypeMobile.addEventListener('change', function () {
-        if (this.value === 'work') {
-            contactWrapperMobile.style.display = 'block';
-            contactTopicMobile.setAttribute('required', 'required');
-            contactTopicMobile.removeAttribute('disabled');
-        } else {
-            contactWrapperMobile.style.display = 'none';
-            contactTopicMobile.removeAttribute('required');
-            contactTopicMobile.value = '';
-            contactTopicMobile.setAttribute('disabled', 'disabled');
-        }
-    });
-}
+    if (type && wrapper && topic) {
+        type.addEventListener('change', function () {
+            if (this.value === 'work') {
+                wrapper.style.display = 'block';
+                topic.setAttribute('required', 'required');
+                topic.removeAttribute('disabled');
+            } else {
+                wrapper.style.display = 'none';
+                topic.removeAttribute('required');
+                topic.value = '';
+                topic.setAttribute('disabled', 'disabled');
+            }
+        });
+    }
+})();
