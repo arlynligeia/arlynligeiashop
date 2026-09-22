@@ -745,6 +745,93 @@
             <!-- FIN BE MY PATRON MOBILE -->
 
 
+            <!-- ===== CONTACT PC ===== -->
+            <section class="main-section" id="contact">
+                <div class="contact-container">
+                    <h1 class="contact-title"><a href="#contact">CONTACT FOR WORK</a></h1>
+                    <!-- FORMULARIO -->
+                    <div class="contact-form">
+                        <form class="contact-form" action="https://formspree.io/f/xwpqdyaq" method="POST">  
+                            <label class="contact-label" for="contact-firstname">FIRST NAME</label>
+                            <input class="contact-input" id="contact-firstname" type="text" name="firstname" required>
+                            <label class="contact-label" for="contact-lastname">LAST NAME</label>
+                            <input class="contact-input" id="contact-lastname" type="text" name="lastname" required>
+                            <label class="contact-label" for="contact-email">EMAIL</label>
+                            <input class="contact-input" id="contact-email" type="email" name="email" required>                            
+                            <!-- TIPO DE CONTACTO -->
+                            <label class="contact-label" for="contact-type">I AM CONTACTING YOU AS</label>
+                            <select class="contact-input" id="contact-type" name="type" required>
+                                <option value="">Select an option</option>
+                                <option value="work">WORK</option>
+                                <option value="fan">FAN</option>
+                            </select>
+                            <!-- TEMA (solo se muestra si eligen WORK) -->
+                            <div class="contact-topic" id="contact-wrapper" style="display: none;">
+                                <label class="contact-label" for="contact-topic">TOPIC</label>
+                                <select class="contact-input" id="contact-topic" name="topic">
+                                    <option value="">Select a topic</option>
+                                    <option value="film">Film</option>
+                                    <option value="music">Music</option>
+                                    <option value="fashion">Fashion</option>
+                                </select>
+                            </div>
+                            <!-- MENSAJE -->                    
+                             <label class="contact-label" for="contact-message">MESSAGE</label>
+                            <textarea class="contact-textarea" id="contact-message" name="message" rows="6" required></textarea>
+                            <!-- BOTÓN -->
+                            <div class="contact-button">  
+                                <button class="contact-submit" type="submit">SUBMIT</button>
+                            </div>  
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!-- ===== FIN CONTACT PC ===== -->
+
+            <!-- ===== CONTACT MOBILE ===== -->
+            <section class="main-section-mobile" id="contact-mobile">
+                <div class="contact-container-mobile">
+                    <h1 class="contact-title-mobile"><a href="#contact-mobile">CONTACT FOR WORK</a></h1>
+                    <!-- FORMULARIO -->
+                    <div class="contact-form-mobile">
+                        <form class="contact-form-mobile" action="https://formspree.io/f/xwpqdyaq" method="POST">  
+                            <label class="contact-label-mobile" for="contact-firstname-mobile">FIRST NAME</label>
+                            <input class="contact-input-mobile" id="contact-firstname-mobile" type="text" name="firstname" required>
+                            <label class="contact-label-mobile" for="contact-lastname-mobile">LAST NAME</label>
+                            <input class="contact-input-mobile" id="contact-lastname-mobile" type="text" name="lastname" required>
+                            <label class="contact-label-mobile" for="contact-email-mobile">EMAIL</label>
+                            <input class="contact-input-mobile" id="contact-email-mobile" type="email" name="email" required>                            
+                            <!-- TIPO DE CONTACTO -->
+                            <label class="contact-label-mobile" for="contact-type-mobile">I AM CONTACTING YOU AS</label>
+                            <select class="contact-input-mobile" id="contact-type-mobile" name="type" required>
+                                <option value="">Select an option</option>
+                                <option value="work">WORK</option>
+                                <option value="fan">FAN</option>
+                            </select>
+                            <!-- TEMA (solo se muestra si eligen WORK) -->
+                            <div class="contact-topic-mobile" id="contact-wrapper-mobile" style="display: none;">
+                                <label class="contact-label-mobile" for="contact-topic-mobile">TOPIC</label>
+                                <select class="contact-input-mobile" id="contact-topic-mobile" name="topic">
+                                    <option value="">Select a topic</option>
+                                    <option value="film">Film</option>
+                                    <option value="music">Music</option>
+                                    <option value="fashion">Fashion</option>
+                                </select>
+                            </div>
+                            <!-- MENSAJE -->                    
+                             <label class="contact-label-mobile" for="contact-message-mobile">MESSAGE</label>
+                            <textarea class="contact-textarea-mobile" id="contact-message-mobile" name="message" rows="6" required></textarea>
+                            <!-- BOTÓN -->
+                            <div class="contact-button-mobile">  
+                                <button class="contact-submit-mobile" type="submit">SUBMIT</button>
+                            </div>  
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!-- ===== FIN CONTACT MOBILE ===== -->
+
+
 
 
 
