@@ -257,6 +257,105 @@ body.is-section .menu-logo {
     }
 }
 
+/* ======================================
+   SUBMENUS PC
+====================================== */
+.menu-nav .submenu {
+    position: absolute;
+    display: none;
+    top: 40px;
+    right: 0;
+    list-style: none;
+    background: #ff00ff !important;
+    z-index: 1000;
+    border: 2px solid #ff1493 !important;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+}
+
+/* Mostrar submenú al hacer hover sobre el <li> padre */
+.menu-nav li:hover > .submenu {
+    display: block;
+}
+
+/* --- ELEMENTOS DEL SUBMENÚ --- */
+.menu-nav .submenu li {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-nav .submenu li a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: white !important;
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: capitalize;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.menu-nav .submenu li a:hover {
+    background: rgba(255, 20, 147, 0.2) !important;
+    color: white !important;
+    padding-left: 20px;
+}
+
+/* --- LÍNEA CELESTE AGUA ANIMADA --- */
+.menu-nav .submenu li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #7ec0ee !important;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.menu-nav .submenu li:hover::before {
+    transform: scaleX(1);
+}
+
+/* --- Separadores entre items --- */
+.menu-nav .submenu li:not(:last-child) {
+    border-bottom: 1px solid white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ======================================
    LOGO PC
