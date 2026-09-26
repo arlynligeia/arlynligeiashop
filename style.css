@@ -1206,7 +1206,7 @@ body.is-section .logo {
 
 
 /* ======================================
-   ABOUT US
+   ABOUT US PC
 ====================================== */
 .aboutus-container {
     position: relative;
@@ -1245,36 +1245,11 @@ body.is-section .logo {
     color: #ff00a9 !important;
     text-decoration: none;
 }
-/* CONTENEDOR: COLUMNAS */
-.aboutus-columns {
-    position: relative;
-    z-index: 2;
-}
-/* CONTENEDOR: GRID DE 2 */
-.aboutus-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin: 0px;
-}
-/* CONTENEDOR: INFORMACIÓN */
+/* INFORMACIÓN */
 .aboutus-information {
     width: 100%;
-    min-width: 0;
+    box-sizing: border-box;
     margin: 0px;
-}
-.aboutus-subtitle {
-    position: relative;
-    z-index: 2;
-    display: block;
-    font-family: 'Doto', sans-serif;
-    font-size: 1.4rem;
-    color: #ffffff !important;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: left;
-    line-height: 1.5;
-    margin: 0 0 10px 0;
 }
 .aboutus-text,
 .aboutus-text-end {
@@ -1285,29 +1260,16 @@ body.is-section .logo {
     text-align: left;
     line-height: 1.5;
     margin: 0 0 10px 0;
-    word-break: break-word;
-    overflow-wrap: break-word;
 }
 .aboutus-text-end {
+    text-align: right;
     margin-bottom: 0px;
-}
-/* CONTENEDOR: IMAGEN */
-.aboutus-image {
-    width: 100%;
-    min-width: 0;
-    margin: 0px;
-}
-.aboutus-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 0px;
 }
 /* CONTROL */
 .aboutus-container { display: block; }
 .aboutus-container-mobile { display: none; }
 /* ======================================
-   MOVIL RESPONSIVE: ABOUT US
+   RESPONSIVE: MOBILE
 ====================================== */
 @media (max-width: 768px) {
     .aboutus-container-mobile {
@@ -1327,7 +1289,7 @@ body.is-section .logo {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100px;
+        height: 60px;
         background: #2a0070 !important;
         border-radius: 0px;
     }
@@ -1347,36 +1309,11 @@ body.is-section .logo {
         color: #ff00a9 !important;
         text-decoration: none;
     }
-    /* CONTENEDOR: IMAGEN */
-    .aboutus-image-mobile {
-        width: 100%;
-        min-width: 0;
-        margin: 0 0 10px 0;
-    }
-    .aboutus-image-mobile img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 0px;
-    }
-    /* CONTENEDOR: INFORMACIÓN */
+    /* INFORMACIÓN */
     .aboutus-information-mobile {
         width: 100%;
         box-sizing: border-box;
         margin: 0px;
-    }
-    .aboutus-subtitle-mobile {
-        position: relative;
-        z-index: 2;
-        display: block;
-        font-family: 'Doto', sans-serif;
-        font-size: 1.2rem;
-        color: #ffffff !important;
-        text-decoration: none;
-        text-transform: uppercase;
-        text-align: justify;
-        line-height: 1.5;
-        margin: 0 0 10px 0;
     }
     .aboutus-text-mobile,
     .aboutus-text-end-mobile {
@@ -1389,11 +1326,142 @@ body.is-section .logo {
         margin: 0 0 10px 0;
     }
     .aboutus-text-end-mobile {
+        text-align: right;
         margin-bottom: 0px;
     }
     /* CONTROL */
     .aboutus-container { display: none; }
     .aboutus-container-mobile { display: block; }
+}
+
+
+/* ======================================
+   PURPOSE PC
+====================================== */
+.purpose-container {
+    position: relative;
+    width: 800px;
+    background: #3f00a8 !important;
+    border: 3px solid #b388ff;
+    border-radius: 0px;
+    margin: 0px auto 50px auto;
+    padding: 30px;
+}
+.purpose-container::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: #2a0070 !important;
+    border-radius: 0px;
+}
+.purpose-title {
+    position: relative;
+    z-index: 2;
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #ff00a9 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+.purpose-title a {
+    color: #ff00a9 !important;
+    text-decoration: none;
+}
+/* INFORMACIÓN */
+.purpose-information {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.purpose-text,
+.purpose-text-end {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.25rem;
+    color: #00FF00 !important;
+    text-decoration: none;
+    text-align: left;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+.purpose-text-end {
+    text-align: right;
+    margin-bottom: 0px;
+}
+/* CONTROL */
+.purpose-container { display: block; }
+.purpose-container-mobile { display: none; }
+/* ======================================
+   RESPONSIVE: MOBILE
+====================================== */
+@media (max-width: 768px) {
+    .purpose-container-mobile {
+        position: relative;
+        width: 90%;
+        box-sizing: border-box;
+        background: #3f00a8 !important;
+        border: 3px solid #b388ff;
+        border-radius: 0px;
+        margin: 80px auto 40px auto;
+        padding: 20px;
+    }
+    .purpose-container-mobile::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #2a0070 !important;
+        border-radius: 0px;
+    }
+    .purpose-title-mobile {
+        position: relative;
+        z-index: 2;
+        display: block;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        color: #ff00a9 !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+    .purpose-title-mobile a {
+        color: #ff00a9 !important;
+        text-decoration: none;
+    }
+    /* INFORMACIÓN */
+    .purpose-information-mobile {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0px;
+    }
+    .purpose-text-mobile,
+    .purpose-text-end-mobile {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1rem;
+        color: #00FF00 !important;
+        text-decoration: none;
+        line-height: 1.5;
+        text-align: left;
+        margin: 0 0 10px 0;
+    }
+    .purpose-text-end-mobile {
+        text-align: right;
+        margin-bottom: 0px;
+    }
+    /* CONTROL */
+    .purpose-container { display: none; }
+    .purpose-container-mobile { display: block; }
 }
 
 
