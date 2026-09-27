@@ -1811,8 +1811,8 @@ body.is-section .logo {
     margin: 0 0 10px 0;
 }
 /* CONTROL */
-.values-container { display: none; }
-.values-container-mobile { display: block; }
+.values-container { display: block; }
+.values-container-mobile { display: none; }
 /* ======================================
    RESPONSIVE: VALUES
 ====================================== */
