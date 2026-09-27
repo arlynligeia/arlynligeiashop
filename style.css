@@ -1775,7 +1775,7 @@ body.is-section .logo {
     border: 2px solid #ffffff;
     border-radius: 6px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: white !important;
     text-decoration: none;
     text-transform: uppercase;
@@ -1798,10 +1798,10 @@ body.is-section .logo {
 }
 .values-box span {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: black !important;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
 }
 /* DIVISOR */
 .values-divider {
@@ -1899,7 +1899,7 @@ body.is-section .logo {
         font-size: 1rem;
         color: black !important;
         text-decoration: none;
-        text-align: center;
+        text-align: left;
     }
     /* DIVISOR */
     .values-divider-mobile {
