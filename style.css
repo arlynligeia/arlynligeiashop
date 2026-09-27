@@ -635,7 +635,7 @@ body.is-section .logo {
     width: 100%;
     table-layout: fixed;
     border-collapse: separate;
-    border-spacing: 20px;
+    border-spacing: 10px;
     background-color: transparent;
 }
 .socialmediacontent-wrapper th:nth-child(1),
