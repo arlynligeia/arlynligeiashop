@@ -1719,7 +1719,7 @@ body.is-section .logo {
 /* ======================================
    VALUES
 ====================================== */
-.values-container-mobile {
+.values-container {
     position: relative;
     width: 90%;
     box-sizing: border-box;
@@ -1729,7 +1729,7 @@ body.is-section .logo {
     margin: 40px auto;
     padding: 20px;
 }
-.values-container-mobile::before {
+.values-container::before {
     content: "";
     position: absolute;
     z-index: 1;
@@ -1740,7 +1740,7 @@ body.is-section .logo {
     background: #2a0070 !important;
     border-radius: 0px;
 }
-.values-title-mobile {
+.values-title {
     position: relative;
     z-index: 2;
     display: block;
@@ -1751,12 +1751,12 @@ body.is-section .logo {
     text-align: center;
     margin: 0 0 10px 0;
 }
-.values-title-mobile a {
+.values-title a {
     color: #ff00a9 !important;
     text-decoration: none;
 }
 /* INFORMACIÓN */
-.values-information-mobile {
+.values-information {
     width: 100%;
     box-sizing: border-box;
     display: block;
