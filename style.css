@@ -1719,128 +1719,100 @@ body.is-section .logo {
 /* ======================================
    VALUES
 ====================================== */
-.values-container {
+.values-container-mobile {
     position: relative;
-    width: 800px;
+    width: 90%;
+    box-sizing: border-box;
     background: #3f00a8 !important;
     border: 3px solid #b388ff;
     border-radius: 0px;
-    margin: 50px auto;
-    padding: 30px;
+    margin: 40px auto;
+    padding: 20px;
 }
-.values-container::before {
+.values-container-mobile::before {
     content: "";
     position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
-    height: 90px;
+    height: 60px;
     background: #2a0070 !important;
     border-radius: 0px;
 }
-.values-title {
+.values-title-mobile {
     position: relative;
     z-index: 2;
     display: block;
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #ff00a9 !important;
     text-decoration: none;
-    text-transform: uppercase;
-    text-align: left;
-    line-height: 1.6;
-    margin: 0 0 16px 0;
+    text-align: center;
+    margin: 0 0 10px 0;
 }
-.values-title a {
+.values-title-mobile a {
     color: #ff00a9 !important;
     text-decoration: none;
 }
-/* TABLA */
-.values-table {
+/* INFORMACIÓN */
+.values-information-mobile {
     width: 100%;
     box-sizing: border-box;
+    display: block;
     margin: 0px;
 }
-.values-wrapper {
+/* SUBTÍTULO */
+.values-subtitle {
     width: 100%;
-    table-layout: fixed;
-    border-collapse: separate;
-    border-spacing: 20px 20px;
-    background-color: transparent;
-}
-.values-wrapper th:nth-child(1),
-.values-wrapper td:nth-child(1) {
-    width: 40%;
-}
-.values-wrapper th:nth-child(2),
-.values-wrapper td:nth-child(2) {
-    width: 60%;
-}
-/* CUERPO */
-.values-body {
-    width: 100%;
+    display: block;
+    text-align: center;
     margin: 0px;
 }
-.values-row {
-    vertical-align: middle;
-}
-/* CELDAS */
-.values-cell {
-    padding: 0px;
-    vertical-align: middle;
-}
-/* COLUMNA 1: TÍTULO DEL VALOR (ESTILO BOTÓN FUCSIA) */
-.values-box {
-    width: 100%;
-    min-height: 40px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.values-subtitle span {
+    display: inline-block;
     background: #ff00a9 !important;
     border: 2px solid #ffffff;
     border-radius: 6px;
-    margin: 0px;
-    padding: 10px 20px;
-}
-.values-text {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white !important;
     text-decoration: none;
-    text-align: center;
     text-transform: uppercase;
+    text-align: center;
     font-weight: bold;
-    margin: 0px;
-    padding: 0px;
+    margin: 0 0 10px 0;
+    padding: 10px 20px;
 }
-/* COLUMNA 2: DESCRIPCIÓN (ESTILO CAJA CELESTE) */
-.values-box-2 {
+/* CAJAS */
+.values-box {
     width: 100%;
-    min-height: 40px;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     background: #00FFFF !important;
     border: 2px solid #000000;
     border-radius: 6px;
-    margin: 0px;
+    text-align: center;
+    margin: 0 0 10px 0;
     padding: 10px;
 }
-.values-box-2 .values-text {
+.values-box span {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: black !important;
     text-decoration: none;
-    text-align: left;
-    text-transform: none;
-    font-weight: normal;
+    text-align: center;
+}
+/* DIVISOR */
+.values-divider {
+    width: 100%;
+    height: 0;
+    border-top: 3px solid #ff00a9 !important;
+    margin: 0 0 10px 0;
 }
 /* CONTROL */
-.values-container { display: block; }
-.values-container-mobile { display: none; }
+.values-container { display: none; }
+.values-container-mobile { display: block; }
 /* ======================================
    RESPONSIVE: VALUES
 ====================================== */
@@ -1888,14 +1860,14 @@ body.is-section .logo {
         display: block;
         margin: 0px;
     }
-    /* SUBTÍTULO (antes botón) */
+    /* SUBTÍTULO */
     .values-subtitle-mobile {
         width: 100%;
         display: block;
         text-align: center;
         margin: 0px;
     }
-    .values-subtitle-mobile .values-text-mobile {
+    .values-subtitle-mobile span {
         display: inline-block;
         background: #ff00a9 !important;
         border: 2px solid #ffffff;
@@ -1913,7 +1885,7 @@ body.is-section .logo {
     /* CAJAS */
     .values-box-mobile {
         width: 100%;
-        box-sizing: border-box;       
+        box-sizing: border-box;
         display: inline-block;
         background: #00FFFF !important;
         border: 2px solid #000000;
@@ -1922,16 +1894,15 @@ body.is-section .logo {
         margin: 0 0 10px 0;
         padding: 10px;
     }
-    /* TEXTO */
-    .values-text-mobile {
+    .values-box-mobile span {
         font-family: 'Share Tech Mono', monospace;
         font-size: 1rem;
         color: black !important;
         text-decoration: none;
         text-align: center;
     }
-     /* DIVISOR */
-    .socialmediacontent-divider-mobile {
+    /* DIVISOR */
+    .values-divider-mobile {
         width: 100%;
         height: 0;
         border-top: 3px solid #ff00a9 !important;
@@ -1941,7 +1912,6 @@ body.is-section .logo {
     .values-container { display: none; }
     .values-container-mobile { display: block; }
 }
-
 
 
 
