@@ -1726,8 +1726,8 @@ body.is-section .logo {
     background: #3f00a8 !important;
     border: 3px solid #b388ff;
     border-radius: 0px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: 50px auto 50px auto;
+    padding: 30px;
 }
 .values-container::before {
     content: "";
@@ -1783,7 +1783,7 @@ body.is-section .logo {
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
     padding: 10px 20px;
 }
 /* CAJAS */
@@ -1795,7 +1795,7 @@ body.is-section .logo {
     border: 2px solid #000000;
     border-radius: 6px;
     text-align: center;
-    margin: 0 0 10px 0;
+    margin: 0 40px 20px 0;
     padding: 10px;
 }
 .values-box span {
