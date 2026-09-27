@@ -1766,16 +1766,16 @@ body.is-section .logo {
     width: 100%;
     table-layout: fixed;
     border-collapse: separate;
-    border-spacing: 20px 15px;
+    border-spacing: 20px 20px;
     background-color: transparent;
 }
 .values-wrapper th:nth-child(1),
 .values-wrapper td:nth-child(1) {
-    width: 25%;
+    width: 30%;
 }
 .values-wrapper th:nth-child(2),
 .values-wrapper td:nth-child(2) {
-    width: 75%;
+    width: 70%;
 }
 /* CUERPO */
 .values-body {
