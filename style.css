@@ -1787,7 +1787,7 @@ body.is-section .logo {
 }
 /* CAJAS */
 .values-box {
-    width: 100%;
+    width: calc(100% - 40px);
     box-sizing: border-box;
     display: inline-block;
     background: #00FFFF !important;
