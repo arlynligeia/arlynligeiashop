@@ -1771,11 +1771,11 @@ body.is-section .logo {
 }
 .values-wrapper th:nth-child(1),
 .values-wrapper td:nth-child(1) {
-    width: 30%;
+    width: 40%;
 }
 .values-wrapper th:nth-child(2),
 .values-wrapper td:nth-child(2) {
-    width: 70%;
+    width: 60%;
 }
 /* CUERPO */
 .values-body {
@@ -1806,7 +1806,7 @@ body.is-section .logo {
 }
 .values-text {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: white !important;
     text-decoration: none;
     text-align: center;
@@ -1831,7 +1831,7 @@ body.is-section .logo {
 }
 .values-box-2 .values-text {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: black !important;
     text-decoration: none;
     text-align: left;
