@@ -1841,31 +1841,8 @@ body.is-section .logo {
 /* CONTROL */
 .values-container { display: block; }
 .values-container-mobile { display: none; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ======================================
-   RESPONSIVE: MOBILE
+   RESPONSIVE: VALUES
 ====================================== */
 @media (max-width: 768px) {
     .values-container-mobile {
@@ -1875,7 +1852,7 @@ body.is-section .logo {
         background: #3f00a8 !important;
         border: 3px solid #b388ff;
         border-radius: 0px;
-        margin: 80px auto 40px auto;
+        margin: 40px auto;
         padding: 20px;
     }
     .values-container-mobile::before {
@@ -1885,7 +1862,7 @@ body.is-section .logo {
         top: 0;
         left: 0;
         width: 100%;
-        height: 60px;
+        height: 100px;
         background: #2a0070 !important;
         border-radius: 0px;
     }
@@ -1897,7 +1874,6 @@ body.is-section .logo {
         font-size: 2rem;
         color: #ff00a9 !important;
         text-decoration: none;
-        text-transform: uppercase;
         text-align: center;
         margin: 0 0 10px 0;
     }
@@ -1909,38 +1885,78 @@ body.is-section .logo {
     .values-information-mobile {
         width: 100%;
         box-sizing: border-box;
+        display: block;
         margin: 0px;
     }
+    /* SUBTÍTULO (antes botón) */
     .values-subtitle-mobile {
-        position: relative;
-        z-index: 2;
+        width: 100%;
         display: block;
-        font-family: 'Doto', sans-serif;
-        font-size: 1.2rem;
-        color: #ffffff !important;
+        text-align: center;
+        margin: 0px;
+    }
+    .values-subtitle-mobile .values-text-mobile {
+        display: inline-block;
+        background: #ff00a9 !important;
+        border: 2px solid #ffffff;
+        border-radius: 6px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1rem;
+        color: white !important;
         text-decoration: none;
         text-transform: uppercase;
-        text-align: left;
-        line-height: 1.5;
+        text-align: center;
+        font-weight: bold;
         margin: 0 0 10px 0;
+        padding: 10px 20px;
     }
-    .values-text-mobile,
-    .values-text-end-mobile {
+    /* CAJAS */
+    .values-box-mobile {
+        width: 100%;
+        height: 40px;
+        box-sizing: border-box;
+        display: inline-block;
+        background: #00FFFF !important;
+        border: 2px solid #000000;
+        border-radius: 6px;
+        text-align: center;
+        margin: 0 0 10px 0;
+        padding: 10px;
+    }
+    /* TEXTO */
+    .values-text-mobile {
         font-family: 'Share Tech Mono', monospace;
         font-size: 1rem;
-        color: #00FF00 !important;
+        color: black !important;
         text-decoration: none;
-        line-height: 1.5;
-        text-align: left;
-        margin: 0 0 10px 0;
-    }
-    .values-text-end-mobile {
-        margin-bottom: 0px;
+        text-align: center;
     }
     /* CONTROL */
     .values-container { display: none; }
     .values-container-mobile { display: block; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
