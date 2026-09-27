@@ -1793,8 +1793,8 @@ body.is-section .logo {
     background: #00FFFF !important;
     border: 2px solid #000000;
     border-radius: 6px;
-    text-align: center;
-    margin: 0 0 20px 0;
+    text-align: left;
+    margin: 0 40px 20px 0;
     padding: 10px;
 }
 .values-box span {
@@ -1803,6 +1803,10 @@ body.is-section .logo {
     color: black !important;
     text-decoration: none;
     text-align: left;
+}
+/* ÚLTIMA CAJA SIN MARGEN INFERIOR */
+.values-box:last-of-type {
+    margin-bottom: 0;
 }
 /* DIVISOR */
 .values-divider {
