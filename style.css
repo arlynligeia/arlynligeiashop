@@ -1,5 +1,5 @@
 body {
-    background-image: url("assets/ARLYN-LIGEIA-fondo-web-horizontal-1920x1080.png");
+    background-image: url("assets/ARLYN LIGEIA. Background PC.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,7 +12,7 @@ body {
 ====================================== */
 @media (max-width: 768px) {
     body {
-        background-image: url("assets/ARLYN-LIGEIA-fondo-web-vertical-1080x1920.png");
+        background-image: url("assets/ARLYN LIGEIA. Background MOBILE.png");
     }
 }
 
