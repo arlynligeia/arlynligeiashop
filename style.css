@@ -887,12 +887,12 @@ body.is-section .logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: calc(100% + 60px);
     box-sizing: border-box;
     background: #2a0070 !important;
     border: 3px solid #b388ff;
     border-radius: 0px;
-    margin: 0 0 16px 0;
+    margin: -30px -30px 16px -30px;
     padding: 10px 15px;
 }
 .universe-title {
