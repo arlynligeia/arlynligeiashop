@@ -65,14 +65,16 @@ function outSize() {
 
 // ---------- Escena ----------
 const W = 8, H = 5.5, L = 14, hw = W / 2, hl = L / 2, DX = 1.5;
-const MAG = 0xff2bd6, CYA = 0x19e6c8;
+const MAG = 0xff2bd6, CYA = 0x22b8ff, VIO = 0x8a3cff;
 const stage = document.getElementById('stage');
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 stage.appendChild(renderer.domElement);
 const cv = renderer.domElement;
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x05021a);
-scene.fog = new THREE.FogExp2(0x05021a, 0.035);
+scene.background = new THREE.Color(0x03010f);
+scene.fog = new THREE.FogExp2(0x03010f, 0.045);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.85;
 const camera = new THREE.PerspectiveCamera(70, 1, 0.1, 60);
 camera.rotation.order = 'YXZ';
 
@@ -80,7 +82,7 @@ const S = 0.354;
 const pyr = new THREE.ConeGeometry(0.25, 0.35, 4, 1, true);
 pyr.rotateY(Math.PI / 4); pyr.translate(0, 0.175, 0);
 const foam = new THREE.MeshStandardMaterial({ roughness: 0.55, flatShading: true });
-const palette = [0x2b1a8a, 0x4a1fa8, 0x6a22b8, 0x1d3fa0, 0x3a0f70].map(c => new THREE.Color(c));
+const palette = [0x1c1160, 0x32157a, 0x4a1a90, 0x142a78, 0x26094f].map(c => new THREE.Color(c));
 function panel(origin, u, v, lenU, lenV, normal, skip) {
   const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), normal);
   const pts = [];
@@ -110,23 +112,56 @@ for (let i = 0; i <= 256; i += 32) { g.beginPath(); g.moveTo(i, 0); g.lineTo(i, 
 g.lineWidth = 8; g.strokeRect(0, 0, 256, 256);
 const tex = new THREE.CanvasTexture(c);
 tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(W / .8, L / .8); tex.anisotropy = 8;
-const floor = new THREE.Mesh(new THREE.PlaneGeometry(W, L), new THREE.MeshStandardMaterial({ map: tex, metalness: .7, roughness: .35, color: 0xa090ff }));
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(W, L), new THREE.MeshStandardMaterial({ map: tex, metalness: .75, roughness: .22, color: 0x6a58d0 }));
 floor.rotation.x = -Math.PI / 2; scene.add(floor);
 
 // Neones
 const neon = hex => new THREE.MeshBasicMaterial({ color: hex });
 const box = (w, h, d, x, y, z, hex) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), neon(hex)); m.position.set(x, y, z); scene.add(m); return m; };
-for (let i = 0; i < 3; i++) for (const s of [-1, 1]) box(.12, .04, 2.4, s * 2.3, H - .37, -4.5 + i * 4.5, s < 0 ? MAG : CYA);
-for (const s of [-1, 1]) box(.06, .03, L - 1, s * (hw - .45), .02, 0, s < 0 ? MAG : CYA);
-box(W - 1, .03, .06, 0, .02, -hl + .45, 0x6a5cff);
+// resplandor suave (aditivo) para halos y reflejos en el suelo
+const gc = document.createElement('canvas'); gc.width = gc.height = 64;
+const gg = gc.getContext('2d');
+const gr = gg.createRadialGradient(32, 32, 0, 32, 32, 32);
+gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(.3, 'rgba(255,255,255,.35)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+gg.fillStyle = gr; gg.fillRect(0, 0, 64, 64);
+const glowTex = new THREE.CanvasTexture(gc);
+function glow(x, y, z, hex, sx, sy, op = .5) {
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, color: hex, transparent: true, opacity: op, blending: THREE.AdditiveBlending, depthWrite: false }));
+  s.position.set(x, y, z); s.scale.set(sx, sy, 1); scene.add(s);
+}
+function floorGlow(x, z, hex, w, l, op = .3) {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w, l), new THREE.MeshBasicMaterial({ map: glowTex, color: hex, transparent: true, opacity: op, blending: THREE.AdditiveBlending, depthWrite: false }));
+  m.rotation.x = -Math.PI / 2; m.position.set(x, .03, z); scene.add(m);
+}
+// tiras del techo: fila exterior (larga) e interior (fina, desfasada)
+for (let i = 0; i < 5; i++) for (const s of [-1, 1]) {
+  const col = (i + (s > 0 ? 1 : 0)) % 2 ? CYA : MAG, z = -5.5 + i * 2.6;
+  box(.12, .04, 1.6, s * 2.3, H - .37, z, col);
+  glow(s * 2.3, H - .6, z, col, 2.6, 1.6, .55);
+  floorGlow(s * 2.3, z, col, 1.4, 3.4, .35);
+}
+for (let i = 0; i < 4; i++) for (const s of [-1, 1]) {
+  const col = (i + (s > 0 ? 0 : 1)) % 2 ? VIO : CYA, z = -4.2 + i * 2.6;
+  box(.05, .03, 1.1, s * 0.9, H - .37, z, col);
+  glow(s * 0.9, H - .6, z, col, 1.6, 1.1, .35);
+}
+// neones de suelo y esquinas del fondo
+for (const s of [-1, 1]) {
+  box(.06, .03, L - 1, s * (hw - .45), .02, 0, s < 0 ? MAG : CYA);
+  box(1.8, .03, .06, s * (hw - 1.5), .02, -hl + .45, CYA);
+  box(.04, 3.4, .04, s * (hw - .4), 1.7, -hl + .4, CYA);
+  glow(s * (hw - 1.5), .25, -hl + .6, CYA, 2.4, .9, .6);
+  glow(s * (hw - .5), 1.7, -hl + .6, CYA, .8, 3.8, .3);
+}
 
 // Luces: magenta a la izquierda, verde-turquesa a la derecha
-scene.add(new THREE.AmbientLight(0x2a1f66, .8));
+scene.add(new THREE.AmbientLight(0x120a40, .35));
 const lamp = (hex, i, x, y, z, d = 12) => { const l = new THREE.PointLight(hex, i, d, 2); l.position.set(x, y, z); scene.add(l); };
-[-3, 2].forEach(z => { lamp(MAG, 26, -2.6, H - .9, z, 13); lamp(CYA, 26, 2.6, H - .9, z, 13); });
-lamp(0x6a4cff, 18, 0, H - 1, -4.5);
-lamp(MAG, 10, -2.5, 2, -hl + 1.2, 9);
-lamp(CYA, 14, DX + 1.5, 2.2, -hl + 1.2, 9);
+lamp(MAG, 14, -2.3, H - .8, -4, 10); lamp(CYA, 14, -2.3, H - .8, 1, 10);
+lamp(CYA, 14, 2.3, H - .8, -4, 10);  lamp(MAG, 14, 2.3, H - .8, 1, 10);
+lamp(VIO, 8, 0, H - 1, -5, 9);
+lamp(MAG, 9, DX - .6, 1.8, -hl + 1.1, 6);   // luz del marco de la puerta
+lamp(CYA, 5, -2.5, 1.2, -hl + 1.2, 6);
 
 // ---------- Puerta (pared del fondo, a la derecha del centro) ----------
 const dz = -hl + 0.08;
@@ -150,7 +185,11 @@ const steel = new THREE.MeshStandardMaterial({ color: 0xc9d4dc, metalness: .9, r
 part(.2, .05, .06, DX - .45, 1.05, dz + .07, steel);  // manija
 part(.05, .1, .05, DX - .55, 1.05, dz + .05, steel);
 [.3, 1.1, 1.9].forEach(y => part(.05, .16, .05, DX + .68, y, dz + .06, steel)); // bisagras (derecha)
-box(.6, .04, .04, DX, 2.45, dz + .1, 0x19e6c8);       // luz pequeña sobre la puerta
+// marco de neón magenta alrededor de la puerta
+box(.04, 2.42, .04, DX - .8, 1.21, dz + .1, MAG);
+box(.04, 2.42, .04, DX + .8, 1.21, dz + .1, MAG);
+box(1.64, .04, .04, DX, 2.42, dz + .1, MAG);
+glow(DX, 1.2, dz + .3, MAG, 3.2, 3.8, .35);
 
 // ---------- Controles ----------
 const START = { x: 0, y: 2.0, z: 0.5, yaw: 0, pitch: 0 };
