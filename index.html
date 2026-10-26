@@ -1,1343 +1,188 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <title>ARLYN LIGEIA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
-    <!-- ===== FUENTES ===== -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fuggles&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Doto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
-    <!-- ===== STYLE ===== -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cámara anecoica – poster</title>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; font-family: system-ui, sans-serif; }
+  #stage { position: fixed; inset: 0; display: grid; place-items: center; }
+  canvas { display: block; touch-action: none; cursor: grab; }
+  #bar { position: fixed; left: 50%; bottom: 12px; transform: translateX(-50%); display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center;
+         padding: 8px 12px; background: rgba(8, 4, 30, .85); border: 1px solid rgba(25, 217, 255, .4); border-radius: 8px; color: #9fd8ff; font-size: 13px; max-width: 94vw; }
+  #bar.off { display: none; }
+  #bar select, #bar button, #bar input { font: inherit; }
+  #bar button { background: #19d9ff; color: #07031a; border: 0; border-radius: 5px; padding: 6px 12px; font-weight: 700; cursor: pointer; }
+  #bar label { display: flex; align-items: center; gap: 6px; }
+</style>
 </head>
-    
-<!DOCTYPE html>
-
-<html lang="es">
-
-    <head>
-
-        <meta charset="UTF-8">
-        <title>ARLYN LIGEIA</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- ===== FUENTES ===== -->
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fuggles&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Doto&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
-
-        <!-- ===== STYLE ===== -->
-        <link rel="stylesheet" href="style.css">
-
-    </head>
-
-    <body class="home">
-        
-        <!-- ===== MENÚ PC ===== -->
-        <header class="menu">
-            <!-- LOGO -->
-            <div class="menu-logo">
-                <img src="https://raw.githubusercontent.com/arlynligeia/arlynligeiashop/refs/heads/main/assets/ARLYN%20LIGEIA.%2003%20Vector%20Imagotype.svg" alt="Arlyn Ligeia Logo">
-            </div>
-            <!-- BOTONES -->
-            <nav class="menu-nav">
-                <ul>
-                    <li>
-                        <a href="#home">HOME</a>
-                        <ul class="submenu">
-                            <li><a href="#home-socialmediacontent">SOCIAL MEDIA CONTENT</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#universe">UNIVERSE</a></li>
-                    <li><a href="#biography">BIO</a></li>
-                    <li><a href="#aboutus">COMPANY</a></li>
-                    <li>
-                        <a class="creativeworlds">CREATIVE WORLDS</a>
-                        <ul class="submenu">
-                            <li><a href="#film">FILM</a></li>
-                            <li><a href="#music">MUSIC</a></li>
-                            <li><a href="#fashion">FASHION</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#store">STORE</a></li>
-                    <li><a href="#bemypatron">BE MY PATRON</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>                     
-        </header>
-        <!-- ===== FIN MENÚ PC ===== -->
-
-        <!-- ===== MENÚ MOBILE ===== -->
-        <header class="menu-mobile">
-            <!-- BOTÓN HAMBURGUESA -->
-            <button class="menu-mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <!-- LOGO -->
-            <div class="menu-mobile-logo">
-                <img src="https://raw.githubusercontent.com/arlynligeia/arlynligeiashop/refs/heads/main/assets/ARLYN%20LIGEIA.%2003%20Vector%20Imagotype.svg" alt="Arlyn Ligeia Logo">
-            </div>
-            <!-- OVERLAY -->
-             <nav class="menu-mobile-nav">
-                <ul>
-                    <li><a href="#home-mobile">HOME</a></li>
-                    <li><a href="#universe-mobile">UNIVERSE</a></li>
-                    <li><a href="#biography-mobile">BIOGRAPHY</a></li>         
-                    <li><a href="#aboutus-mobile">COMPANY</a></li>  
-                    <li><a href="#film-mobile">FILM</a></li>                   
-                    <li><a href="#music-mobile">MUSIC</a></li>
-                    <li><a href="#fashion-mobile">FASHION</a></li>
-                    <li><a href="#store-mobile">STORE</a></li>
-                    <li><a href="#bemypatron-mobile">BE MY PATRON</a></li>
-                    <li><a href="#contact-mobile">CONTACT</a></li>
-                </ul>
-            </nav>
-        </header>
-        <!-- ===== FIN MENÚ MOBILE ===== -->
-         
-        
-        <!-- ===== LOGO PC ===== -->
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/arlynligeia/arlynligeia.github.io/refs/heads/main/assets/assets/ARLYN%20LIGEIA.%2001%20Vector%20Imagotype.svg" alt="Arlyn Ligeia Logo">
-        </div>
-        <!-- ===== FIN LOGO PC ===== -->
-    
-   
-        <main>
-            
-            <!-- ===== HOME PC ===== -->
-            <section class="main-section" id="home">
-                <div class="home-container">
-                    <h1 class="home-title"><a href="#home">UPCOMING RELEASE</a></h1>
-                    <!-- COLUMNAS -->
-                    <div class="home-columns">
-                        <!-- GRID -->
-                        <div class="home-grid">
-                            <!-- IMAGEN -->
-                            <div class="home-image">
-                                <img src="assets/AC57. 01 Teaser Poster 4K.png" alt="Anechoic Chamber 57 Teaser Poster">
-                            </div>
-                            <!-- INFORMACIÓN -->
-                            <div class="home-information">
-                                <p class="home-subtitle">ANECHOIC CHAMBER 57</p>
-                                <p class="home-subtitle-2">AVAILABLE IN FEBRUARY 2027</p>
-                                <p class="home-text">A medium-length film and fashion collection of psychological surrealist drama, conceived together as a critique of an increasingly homogenized and repressed society.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN HOME PC ===== -->
-        
-            <!-- ===== HOME MOBILE ===== -->
-            <section class="main-section-mobile" id="home-mobile">
-                <div class="home-container-mobile">
-                    <h1 class="home-title-mobile"><a href="#home-mobile">UPCOMING RELEASE</a></h1>
-                    <!-- IMAGEN -->
-                    <div class="home-image-mobile">
-                        <img src="assets/AC57. 01 Teaser Poster 4K.png" alt="Anechoic Chamber 57 Teaser Poster">
-                    </div>
-                    <!-- INFORMACIÓN -->
-                    <div class="home-information-mobile">
-                        <p class="home-subtitle-mobile">ANECHOIC CHAMBER 57</p>
-                        <p class="home-subtitle-2-mobile">AVAILABLE IN FEBRUARY 2027</p>
-                        <p class="home-text-mobile">A medium-length film and fashion collection of psychological surrealist drama, conceived together as a critique of an increasingly homogenized and repressed society.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN HOME MOBILE ===== -->
-
-    
-            <!-- ===== SOCIAL MEDIA CONTENT PC ===== -->
-            <section class="subsection" id="home-socialmediacontent">
-                <div class="socialmediacontent-container">
-                    <h1 class="socialmediacontent-title"><a href="#home-socialmediacontent">SOCIAL MEDIA CONTENT</a></h1>
-                    <!-- TABLA -->
-                    <div class="socialmediacontent-table">
-                        <table class="socialmediacontent-wrapper">
-                            <!-- ENCABEZADOS -->
-                            <thead class="socialmediacontent-head">
-                                <tr class="socialmediacontent-row">
-                                    <th class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-box">
-                                            <span class="socialmediacontent-subtitle">ACCOUNT</span>
-                                        </div>
-                                    </th>
-                                    <th class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-box">
-                                            <span class="socialmediacontent-subtitle">DAYS</span>
-                                        </div>
-                                    </th>
-                                    <th class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-box">
-                                            <span class="socialmediacontent-subtitle">TIME</span>
-                                        </div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <!-- CUERPO -->
-                            <tbody class="socialmediacontent-body">
-                                <!-- FILA 1 -->
-                                <tr class="socialmediacontent-row">
-                                    <td class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-button">
-                                            <a class="socialmediacontent-tiktok" href="https://tiktok.com/@arlynligeia" target="_blank">TIKTOK</a>
-                                        </div>
-                                    </td>
-                                    <td class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-box-2">
-                                            <span class="socialmediacontent-text">MON-TUE-WED-THU-FRI-SAT-SUN</span>
-                                        </div>
-                                    </td>
-                                    <td class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-box-2">
-                                            <span class="socialmediacontent-text">7.00 PM (ET New York)</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <!-- FILA 2 -->
-                                <tr class="socialmediacontent-row">
-                                    <td class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-button">
-                                            <a class="socialmediacontent-tiktok" href="https://tiktok.com/@arlynligeiacp" target="_blank">TIKTOK</a>
-                                        </div>
-                                    </td>
-                                    <td class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-box-2">
-                                            <span class="socialmediacontent-text">LUN-MAR-MIÉ-JUE-VIE-SAB-DOM</span>
-                                        </div>
-                                    </td>
-                                    <td class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-box-2">
-                                            <span class="socialmediacontent-text">8.00 PM (ET New York)</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <!-- FILA 3 -->
-                                <tr class="socialmediacontent-row">
-                                    <td class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-button">
-                                            <a class="socialmediacontent-youtube" href="https://youtube.com/@arlynligeia" target="_blank">YOUTUBE</a>
-                                        </div>
-                                    </td>
-                                    <td class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-box-2">
-                                            <span class="socialmediacontent-text">MON-WED-FRI</span>
-                                        </div>
-                                    </td>
-                                    <td class="socialmediacontent-cell">
-                                        <div class="socialmediacontent-box-2">
-                                            <span class="socialmediacontent-text">5.00 PM (ET New York)</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN SOCIAL MEDIA CONTENT PC ===== -->      
-  
-            <!-- ===== SOCIAL MEDIA CONTENT MOBILE ===== -->
-            <section class="subsection-mobile" id="home-mobile-socialmediacontent">
-                <div class="socialmediacontent-container-mobile">
-                    <h2 class="socialmediacontent-title-mobile"><a href="#home-mobile-socialmediacontent">SOCIAL MEDIA CONTENT</a></h2>
-                    <!-- INFORMACIÓN -->
-                    <div class="socialmediacontent-information-mobile">
-                        <!-- GRUPO 1 -->
-                        <div class="socialmediacontent-button-mobile">
-                            <a class="socialmediacontent-tiktok-mobile" href="https://tiktok.com/@arlynligeia" target="_blank">TIKTOK</a>
-                        </div>
-                        <div class="socialmediacontent-box-mobile">
-                            <span class="socialmediacontent-text-mobile">MON-TUE-WED-THU-FRI-SAT-SUN</span>
-                        </div>
-                        <div class="socialmediacontent-box-mobile">
-                            <span class="socialmediacontent-text-mobile">7.00 PM (ET New York)</span>
-                        </div>
-                        <!-- DIVISOR -->
-                        <div class="socialmediacontent-divider-mobile"></div>
-                        <!-- GRUPO 2 -->
-                        <div class="socialmediacontent-button-mobile">
-                            <a class="socialmediacontent-tiktok-mobile" href="https://tiktok.com/@arlynligeiacp" target="_blank">TIKTOK</a>
-                        </div>
-                        <div class="socialmediacontent-box-mobile">
-                            <span class="socialmediacontent-text-mobile">LUN-MAR-MIÉ-JUE-VIE-SAB-DOM</span>
-                        </div>
-                        <div class="socialmediacontent-box-mobile">
-                            <span class="socialmediacontent-text-mobile">8.00 PM (ET New York)</span>
-                        </div>
-                        <!-- DIVISOR -->
-                        <div class="socialmediacontent-divider-mobile"></div>
-                        <!-- GRUPO 3 -->
-                        <div class="socialmediacontent-button-mobile">
-                            <a class="socialmediacontent-youtube-mobile" href="https://youtube.com/@arlynligeia" target="_blank">YOUTUBE</a>
-                        </div>
-                        <div class="socialmediacontent-box-mobile">
-                            <span class="socialmediacontent-text-mobile">MON-WED-FRI</span>
-                        </div>
-                        <div class="socialmediacontent-box-mobile">
-                            <span class="socialmediacontent-text-mobile">5.00 PM (ET New York)</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN SOCIAL MEDIA CONTENT MOBILE ===== -->
-
-            
-            <!-- ===== TIKTOK HIGHTLIGHTS ===== -->
-            <!-- ===== FIN TIKTOK HIGHTLIGHTS ===== -->
-
-
-            <!-- ===== YOUTUBE HIGHTLIGHTS ===== -->
-            <!-- ===== FIN YOUTUBE HIGHTLIGHTS ===== -->
-
-    
-<!-- ===== UNIVERSE PC ===== -->
-            <section class="main-section" id="universe">
-                <div class="universe-container">
-                    <!-- BARRA DE VENTANA -->
-                    <div class="universe-bar">
-                        <h1 class="universe-title"><a href="#universe">UNIVERSE</a></h1>
-                        <div class="universe-close-box">
-                            <span class="universe-close">X</span>
-                        </div>
-                    </div>
-                    <!-- INFORMACIÓN -->
-                    <div class="universe-information">
-                        <p class="universe-text">Ladies and gentlemen,</p>
-                        <p class="universe-text">welcome to the universe of ARLYN LIGEIA…</p>
-                        <p class="universe-text">A space where the cosmic, the technological, and the sensory converge; where the past and the future meet in the present; where emotion and reason coexist; and where art becomes a way of exploring that which we do not yet understand.</p>
-                        <p class="universe-text">The Arlyn Ligeia universe explores the transformation of the human condition and the possibilities of what could exist beyond its biological limits. Its work moves through transhumanism and posthumanism, exploring the boundary between the human and the artificial, the biological and the designed, the mortal and that which aspires to transcend death.</p>
-                        <p class="universe-text">Its imaginary is nourished by the exploration of the cosmos, spacetime, the mechanisms of life, the mind, cognition, consciousness, and the possibilities opened by technology and the evolution of human capabilities.</p>
-                        <p class="universe-text">Depth psychology, biology, physics, astrophysics, and emerging technologies form part of this creative territory. As fields from which questions arise about the origin, nature, limits, and future of existence.</p>
-                        <p class="universe-text">Visually, this universe draws inspiration from vaporwave, cyberglam, space glam, retrofuturism, 1990s pop culture, Pop Art, and Art Deco.</p>
-                        <p class="universe-text">The conceptual framework of Arlyn Ligeia lies in the exploration of transhumanism, posthumanism, science, technology, and the transformation of the human condition.</p>
-                        <p class="universe-text">For Ligeia, art is a language that originates within and projects itself outward. Therefore, a film, a song, a garment, an accessory, a jewel, an image, a painting, or a verse can form part of the same exploration. Each work constitutes a fragment of a larger universe, a way of investigating, imagining, feeling, and materializing that which does not yet exist.</p>
-                        <p class="universe-text">Here you will find the works of Arlyn Ligeia, as well as fragments of its thoughts, obsessions, questions, and transformations.</p>
-                        <p class="universe-text-end">BEYOND THE BIOLOGICAL BOUNDARY…<br>Arlyn Ligeia<br>09/25/2026</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN UNIVERSE PC ===== -->
-
-            <!-- ===== UNIVERSE MOBILE ===== -->
-            <section class="main-section-mobile" id="universe-mobile">
-                <div class="universe-container-mobile">
-                    <h1 class="universe-title-mobile"><a href="#universe-mobile">UNIVERSE</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="universe-information-mobile">
-                        <p class="universe-text-mobile">Ladies and gentlemen,</p>
-                        <p class="universe-text-mobile">welcome to the universe of ARLYN LIGEIA…</p>
-                        <p class="universe-text-mobile">A space where the cosmic, the technological, and the sensory converge; where the past and the future meet in the present; where emotion and reason coexist; and where art becomes a way of exploring that which we do not yet understand.</p>
-                        <p class="universe-text-mobile">The Arlyn Ligeia universe explores the transformation of the human condition and the possibilities of what could exist beyond its biological limits. Its work moves through transhumanism and posthumanism, exploring the boundary between the human and the artificial, the biological and the designed, the mortal and that which aspires to transcend death.</p>
-                        <p class="universe-text-mobile">Its imaginary is nourished by the exploration of the cosmos, spacetime, the mechanisms of life, the mind, cognition, consciousness, and the possibilities opened by technology and the evolution of human capabilities.</p>
-                        <p class="universe-text-mobile">Depth psychology, biology, physics, astrophysics, and emerging technologies form part of this creative territory. As fields from which questions arise about the origin, nature, limits, and future of existence.</p>
-                        <p class="universe-text-mobile">Visually, this universe draws inspiration from vaporwave, cyberglam, space glam, retrofuturism, 1990s pop culture, Pop Art, and Art Deco.</p>
-                        <p class="universe-text-mobile">The conceptual framework of Arlyn Ligeia lies in the exploration of transhumanism, posthumanism, science, technology, and the transformation of the human condition.</p>
-                        <p class="universe-text-mobile">For Ligeia, art is a language that originates within and projects itself outward. Therefore, a film, a song, a garment, an accessory, a jewel, an image, a painting, or a verse can form part of the same exploration. Each work constitutes a fragment of a larger universe, a way of investigating, imagining, feeling, and materializing that which does not yet exist.</p>
-                        <p class="universe-text-mobile">Here you will find the works of Arlyn Ligeia, as well as fragments of its thoughts, obsessions, questions, and transformations.</p>
-                        <p class="universe-text-end-mobile">BEYOND THE BIOLOGICAL BOUNDARY…<br>Arlyn Ligeia<br>09/25/2026</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN UNIVERSE MOBILE ===== -->
-           
-
-            <!-- ===== BIOGRAPHY ===== -->
-            <section class="main-section" id="biography">
-                <div class="biography-container">
-                    <h1 class="biography-title"><a href="#biography">ABOUT ARLYN LIGEIA</a></h1>
-                    <!-- COLUMNAS -->
-                    <div class="biography-columns">
-                        <!-- GRID DE DOS -->
-                        <div class="biography-grid">
-                            <!-- COLUMNA 1: INFORMACIÓN -->
-                            <div class="biography-information">
-                                <p class="biography-subtitle">LUCA DESCENDANT…</p>
-                                <p class="biography-text">Ligeia, also known as Arlyn Ligeia, is a Peruvian multidisciplinary artist working across film, music, fashion, and art.</p>
-                                <p class="biography-text">She grew up in Peru, far from the film, music, and fashion industries. Film and music became her natural language and, having no access to any of those worlds, she learned to build her own.</p>
-                                <p class="biography-text">She studied Psychology at university and complemented her education with studies in Audiovisual Communication and Fashion Management and Design. She currently holds a B.S. in Psychology and a diploma in Fashion Management and Design.</p>
-                                <p class="biography-text">In 2021, she directed her first audiovisual work, a music video for an independent band, marking the beginning of her career as a director. In 2024, she wrote, directed, filmed, starred in, and edited her first short film, taking on every role in the production from beginning to end.</p>
-                                <p class="biography-text">That same year, she was admitted to the Master’s Degree in Performing Arts at the Pontifical Catholic University of Peru. However, she decided to postpone this academic path in order to dedicate herself fully to building her own body of work.</p>
-                                <p class="biography-text">After completing a music video and a short film, she is currently developing her first fashion collection and a mid-length film, while simultaneously working on her debut album and her first feature film.</p>
-                                <p class="biography-text">Ligeia’s artistic trajectory is a conscious pursuit of inner authenticity. She embraces her femininity alongside her interests and passions, without separating them. In contrast to neutrality, she deliberately chooses visual and sensory stimulation as a form of fidelity to herself.</p>
-                                <p class="biography-text">Ligeia defines her art as authentic and visceral, a space where she freely explores female desire. She identifies with the femme fatale archetype and with femininity understood as a deliberate force; a reflection of herself that becomes a recurring theme in her work.</p>
-                                <p class="biography-text">She refuses to be confined by labels.</p>
-                                <p class="biography-text-end">True art does not ask for permission.</p>
-                            </div>
-                            <!-- COLUMNA 2: IMAGEN -->
-                            <div class="biography-image">
-                                <img src="assets/arlynligeia.jpg" alt="Portrait of Arlyn Ligeia">
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-            </section>
-            <!-- ===== FIN BIOGRAPHY ===== -->
-
-            <!-- ===== BIOGRAPHY MOBILE ===== -->
-            <section class="main-section-mobile" id="biography-mobile">
-                <div class="biography-container-mobile">
-                    <h1 class="biography-title-mobile"><a href="#biography-mobile">ABOUT<br>ARLYN LIGEIA</a></h1>
-                    <!-- IMAGEN -->
-                    <div class="biography-image-mobile">
-                        <img src="assets/arlynligeia.jpg" alt="Portrait of Arlyn Ligeia">
-                    </div>
-                    <!-- INFORMACIÓN -->
-                    <div class="biography-information-mobile">
-                        <p class="biography-subtitle-mobile">LUCA DESCENDANT…</p>
-                        <p class="biography-text-mobile">Ligeia, also known as Arlyn Ligeia, is a Peruvian multidisciplinary artist working across film, music, fashion, and art.</p>
-                        <p class="biography-text-mobile">She grew up in Peru, far from the film, music, and fashion industries. Film and music became her natural language and, having no access to any of those worlds, she learned to build her own.</p>
-                        <p class="biography-text-mobile">She studied Psychology at university and complemented her education with studies in Audiovisual Communication and Fashion Management and Design. She currently holds a B.S. in Psychology and a diploma in Fashion Management and Design.</p>
-                        <p class="biography-text-mobile">In 2021, she directed her first audiovisual work, a music video for an independent band, marking the beginning of her career as a director. In 2024, she wrote, directed, filmed, starred in, and edited her first short film, taking on every role in the production from beginning to end.</p>
-                        <p class="biography-text-mobile">That same year, she was admitted to the Master’s Degree in Performing Arts at the Pontifical Catholic University of Peru. However, she decided to postpone this academic path in order to dedicate herself fully to building her own body of work.</p>
-                        <p class="biography-text-mobile">After completing a music video and a short film, she is currently developing her first fashion collection and a mid-length film, while simultaneously working on her debut album and her first feature film.</p>
-                        <p class="biography-text-mobile">Ligeia’s artistic trajectory is a conscious pursuit of inner authenticity. She embraces her femininity alongside her interests and passions, without separating them. In contrast to neutrality, she deliberately chooses visual and sensory stimulation as a form of fidelity to herself.</p>
-                        <p class="biography-text-mobile">Ligeia defines her art as authentic and visceral, a space where she freely explores female desire. She identifies with the femme fatale archetype and with femininity understood as a deliberate force; a reflection of herself that becomes a recurring theme in her work.</p>
-                        <p class="biography-text-mobile">She refuses to be confined by labels.</p>
-                        <p class="biography-text-end-mobile">True art does not ask for permission.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN BIOGRAPHY MOBILE ===== -->
-
-
-            <!-- ===== ABOUT US PC ===== -->
-            <section class="main-section" id="aboutus">
-                <div class="aboutus-container">
-                    <h1 class="aboutus-title"><a href="#aboutus">ABOUT US</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="aboutus-information">
-                        <p class="aboutus-text">ARLYN LIGEIA is a multidisciplinary creative house dedicated to creating works that explore the relationship between art, science, technology, and the transformation of the human condition.</p>
-                        <p class="aboutus-text">Its creative universe manifests through film, music, fashion, and art, as different languages capable of building a shared vision.</p>
-                        <p class="aboutus-text">The house develops original projects that combine narrative, aesthetics, research, and experimentation to explore the possibilities of what we are, what we may become, and what could exist beyond known boundaries.</p>
-                        <p class="aboutus-text-end">ARLYN LIGEIA emerges from an author-driven and multidisciplinary vision, conceived to evolve beyond an individual artistic practice into a creative ecosystem capable of developing works, intellectual property, objects, experiences, and new forms of expression.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN ABOUT US PC ===== -->
-
-            <!-- ===== ABOUT US MOBILE ===== -->
-            <section class="main-section-mobile" id="aboutus-mobile">
-                <div class="aboutus-container-mobile">
-                    <h1 class="aboutus-title-mobile"><a href="#aboutus-mobile">ABOUT US</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="aboutus-information-mobile">
-                        <p class="aboutus-text-mobile">ARLYN LIGEIA is a multidisciplinary creative house dedicated to creating works that explore the relationship between art, science, technology, and the transformation of the human condition.</p>
-                        <p class="aboutus-text-mobile">Its creative universe manifests through film, music, fashion, and art, as different languages capable of building a shared vision.</p>
-                        <p class="aboutus-text-mobile">The house develops original projects that combine narrative, aesthetics, research, and experimentation to explore the possibilities of what we are, what we may become, and what could exist beyond known boundaries.</p>
-                        <p class="aboutus-text-end-mobile">ARLYN LIGEIA emerges from an author-driven and multidisciplinary vision, conceived to evolve beyond an individual artistic practice into a creative ecosystem capable of developing works, intellectual property, objects, experiences, and new forms of expression.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN ABOUT US MOBILE ===== -->
-
-
-            <!-- ===== PURPOSE PC ===== -->
-            <section class="subsection" id="aboutus-purpose">
-                <div class="purpose-container">
-                    <h1 class="purpose-title"><a href="#aboutus-purpose">PURPOSE</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="purpose-information">
-                        <p class="purpose-text">To explore the transition toward posthumanity, the transformation of the human condition, and the possibilities of what could exist beyond known boundaries, from an artistic, scientific, and pragmatic perspective, removed from the moral myths and traditional clichés of science fiction.</p>
-                        <p class="purpose-text">To develop narratives, sounds, and neokitsch aesthetics through film, music, fashion, and art, where ambition, desire, and technology converge as forces of expansion and growth.</p>
-                        <p class="purpose-text-end">To investigate the boundaries of human existence and expand the imagination around what we may come to understand, create, transform, or achieve through science, technology, and the evolution of our capabilities.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN PURPOSE PC ===== -->
-
-            <!-- ===== PURPOSE MOBILE ===== -->
-            <section class="subsection-mobile" id="aboutus-mobile-purpose">
-                <div class="purpose-container-mobile">
-                    <h1 class="purpose-title-mobile"><a href="#aboutus-mobile-purpose">PURPOSE</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="purpose-information-mobile">
-                        <p class="purpose-text-mobile">To explore the transition toward posthumanity, the transformation of the human condition, and the possibilities of what could exist beyond known boundaries, from an artistic, scientific, and pragmatic perspective, removed from the moral myths and traditional clichés of science fiction.</p>
-                        <p class="purpose-text-mobile">To develop narratives, sounds, and neokitsch aesthetics through film, music, fashion, and art, where ambition, desire, and technology converge as forces of expansion and growth.</p>
-                        <p class="purpose-text-end-mobile">To investigate the boundaries of human existence and expand the imagination around what we may come to understand, create, transform, or achieve through science, technology, and the evolution of our capabilities.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN PURPOSE MOBILE ===== -->
-
-
-            <!-- ===== MISSION PC ===== -->
-            <section class="subsection" id="aboutus-mission">
-                <div class="mission-container">
-                    <h1 class="mission-title"><a href="#aboutus-mission">MISSION</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="mission-information">
-                        <p class="mission-text">To consolidate a multidisciplinary artistic universe where film, music, fashion, art, science, and technology converge to explore the transformation of the human condition.</p>
-                        <p class="mission-text">To create works and experiences that translate scientific, technological, and psychological concepts into narratives, sounds, images, and forms capable of expanding perception and stimulating new possibilities for imagining the future.</p>
-                        <p class="mission-text-end">To build complex characters, stories, and worlds that explore desire, ambition, consciousness, and human evolution without reducing them to moral judgments, transforming art into a space for research, experimentation, and the expansion of the imagination.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN MISSION PC ===== -->
-
-            <!-- ===== MISSION MOBILE ===== -->
-            <section class="subsection-mobile" id="aboutus-mobile-mission">
-                <div class="mission-container-mobile">
-                    <h1 class="mission-title-mobile"><a href="#aboutus-mobile-mission">MISSION</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="mission-information-mobile">
-                        <p class="mission-text-mobile">To consolidate a multidisciplinary artistic universe where film, music, fashion, art, science, and technology converge to explore the transformation of the human condition.</p>
-                        <p class="mission-text-mobile">To create works and experiences that translate scientific, technological, and psychological concepts into narratives, sounds, images, and forms capable of expanding perception and stimulating new possibilities for imagining the future.</p>
-                        <p class="mission-text-end-mobile">To build complex characters, stories, and worlds that explore desire, ambition, consciousness, and human evolution without reducing them to moral judgments, transforming art into a space for research, experimentation, and the expansion of the imagination.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN MISSION MOBILE ===== -->
-
-
-            <!-- ===== VISION PC ===== -->
-            <section class="subsection" id="aboutus-vision">
-                <div class="vision-container">
-                    <h1 class="vision-title"><a href="#aboutus-vision">VISION</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="vision-information">
-                        <p class="vision-text">To become a leading art and research house for the transhuman era; a creative ecosystem where science, technology, and high culture converge to expand the imagination of humanity’s future.</p>
-                        <p class="vision-text-end">To build an international firm capable of transcending conventional artistic disciplines, developing intellectual property, works, products, experiences, and new forms of expression that connect creativity, knowledge, and innovation.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN VISION PC ===== -->
-
-            <!-- ===== VISION MOBILE ===== -->
-            <section class="subsection-mobile" id="aboutus-mobile-vision">
-                <div class="vision-container-mobile">
-                    <h1 class="vision-title-mobile"><a href="#aboutus-mobile-vision">VISION</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="vision-information-mobile">
-                        <p class="vision-text-mobile">To become a leading art and research house for the transhuman era; a creative ecosystem where science, technology, and high culture converge to expand the imagination of humanity’s future.</p>
-                        <p class="vision-text-end-mobile">To build an international firm capable of transcending conventional artistic disciplines, developing intellectual property, works, products, experiences, and new forms of expression that connect creativity, knowledge, and innovation.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN VISION MOBILE ===== -->
-
-            <!-- ===== VALUES PC ===== -->
-            <section class="subsection" id="aboutus-values">
-                <div class="values-container">
-                    <h2 class="values-title"><a href="#aboutus-values">VALUES</a></h2>
-                    <!-- INFORMACIÓN -->
-                    <div class="values-information">
-                        <!-- GRUPO 1 -->
-                        <div class="values-subtitle">
-                            <span>AUTHENTICITY</span>
-                        </div>
-                        <div class="values-box">
-                            <span>We defend independent judgment and creative freedom. Every work emerges from an inner conviction and an honest exploration, without relying on trends or external formulas.</span>
-                        </div>
-                        <!-- DIVISOR -->
-                        <div class="values-divider"></div>                        
-                        <!-- GRUPO 2 -->
-                        <div class="values-subtitle">
-                            <span>SCIENTIFIC RIGOR</span>
-                        </div>
-                        <div class="values-box">
-                            <span>Science forms part of ARLYN LIGEIA’s conceptual infrastructure. We approach physics, biology, psychology, and other scientific fields with seriousness, using knowledge as a foundation for building credible worlds and possibilities.</span>
-                        </div>
-                        <!-- DIVISOR -->
-                        <div class="values-divider"></div>               
-                        <!-- GRUPO 3 -->
-                        <div class="values-subtitle">
-                            <span>PRAGMATISM</span>
-                        </div>
-                        <div class="values-box">
-                            <span>We observe reality through an analytical lens, questioning assumptions, incentives, ambitions, and consequences without reducing them to moral judgments. Art can also be a tool for observing what we would rather not look at.</span>
-                        </div>
-                        <!-- DIVISOR -->
-                        <div class="values-divider"></div>                          
-                        <!-- GRUPO 4 -->
-                        <div class="values-subtitle">
-                            <span>TECHNOLOGICAL VANGUARD</span>
-                        </div>
-                        <div class="values-box">
-                            <span>We understand technology as an extension of human and creative capabilities. We explore emerging tools and possibilities to expand what an artist can imagine, create, and materialize without replacing authorship.</span>
-                        </div>
-                        <!-- DIVISOR -->
-                        <div class="values-divider"></div>                          
-                        <!-- GRUPO 5 -->
-                        <div class="values-subtitle">
-                            <span>TRANSGENERATIONAL LEGACY</span>
-                        </div>
-                        <div class="values-box">
-                            <span>We create with the intention of transcending the present. Works, narratives, objects, and experiences conceived to preserve cultural, artistic, and conceptual value beyond their time.</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN VALUES PC ===== -->
-    
-            <!-- ===== VALUES MOBILE ===== -->
-            <section class="subsection-mobile" id="aboutus-mobile-values">
-                <div class="values-container-mobile">
-                    <h2 class="values-title-mobile"><a href="#aboutus-mobile-values">VALUES</a></h2>
-                    <!-- INFORMACIÓN -->
-                    <div class="values-information-mobile">
-                        <!-- GRUPO 1 -->
-                        <div class="values-subtitle-mobile">
-                            <span>AUTHENTICITY</span>
-                        </div>
-                        <div class="values-box-mobile">
-                            <span>We defend independent judgment and creative freedom. Every work emerges from an inner conviction and an honest exploration, without relying on trends or external formulas.</span>
-                        </div>
-                        <!-- DIVISOR -->
-                        <div class="values-divider-mobile"></div>                        
-                        <!-- GRUPO 2 -->
-                        <div class="values-subtitle-mobile">
-                            <span>SCIENTIFIC RIGOR</span>
-                        </div>
-                        <div class="values-box-mobile">
-                            <span>Science forms part of ARLYN LIGEIA’s conceptual infrastructure. We approach physics, biology, psychology, and other scientific fields with seriousness, using knowledge as a foundation for building credible worlds and possibilities.</span>
-                        </div>
-                        <!-- DIVISOR -->
-                        <div class="values-divider-mobile"></div>               
-                        <!-- GRUPO 3 -->
-                        <div class="values-subtitle-mobile">
-                            <span>PRAGMATISM</span>
-                        </div>
-                        <div class="values-box-mobile">
-                            <span>We observe reality through an analytical lens, questioning assumptions, incentives, ambitions, and consequences without reducing them to moral judgments. Art can also be a tool for observing what we would rather not look at.</span>
-                        </div>
-                        <!-- DIVISOR -->
-                        <div class="values-divider-mobile"></div>                          
-                        <!-- GRUPO 4 -->
-                        <div class="values-subtitle-mobile">
-                            <span>TECHNOLOGICAL VANGUARD</span>
-                        </div>
-                        <div class="values-box-mobile">
-                            <span>We understand technology as an extension of human and creative capabilities. We explore emerging tools and possibilities to expand what an artist can imagine, create, and materialize without replacing authorship.</span>
-                        </div>
-                        <!-- DIVISOR -->
-                        <div class="values-divider-mobile"></div>                          
-                        <!-- GRUPO 5 -->
-                        <div class="values-subtitle-mobile">
-                            <span>TRANSGENERATIONAL LEGACY</span>
-                        </div>
-                        <div class="values-box-mobile">
-                            <span>We create with the intention of transcending the present. Works, narratives, objects, and experiences conceived to preserve cultural, artistic, and conceptual value beyond their time.</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN VALUES MOBILE ===== -->
-
-
-
-
-
-
-
-
-            
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            <!-- ===== FILM PC ===== -->
-            <section class="main-section" id="film">
-                <div class="film-container">
-                    <h1 class="film-title"><a href="#film">FILM</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="film-information">  
-                        <p class="film-text">Welcome to the Film Section…</p>
-                        <p class="film-text">Film is the fundamental core of the ARLYN LIGEIA universe. It is a space where fiction becomes a language for exploring the inner world, desire, ideas, and questions that run through each work by the artist.</p>
-                        <p class="film-text">Through image, sound, and narrative, each project seeks to transcend the screen and become a sensory experience capable of provoking reflection, emotion, and imagination.</p>
-                        <p class="film-text">The cinematic work of ARLYN LIGEIA draws inspiration from science fiction, film noir, gothic cinema, and intense color palettes characteristic of retrofuturist visual aesthetics. Likewise, the cinematic work can extend into music, fashion, and other forms of expression, functioning as interconnected fragments of the same creative exploration.</p>
-                        <p class="film-text-end">Here you will find the film projects of ARLYN LIGEIA.</p>
-                    </div>
-                </div>  
-            </section>
-            <!-- ===== FIN FILM PC ===== -->
-               
-            <!-- ===== FILM MOBILE ===== -->
-            <section class="main-section-mobile" id="film-mobile">
-                <div class="film-container-mobile">
-                    <h2 class="film-title-mobile"><a href="#film-mobile">FILM</a></h2>
-                    <!-- INFORMACIÓN -->
-                    <div class="film-information-mobile">  
-                        <p class="film-text-mobile">Welcome to the Film Section…</p>
-                        <p class="film-text-mobile">Film is the fundamental core of the ARLYN LIGEIA universe. It is a space where fiction becomes a language for exploring the inner world, desire, ideas, and questions that run through each work by the artist.</p>
-                        <p class="film-text-mobile">Through image, sound, and narrative, each project seeks to transcend the screen and become a sensory experience capable of provoking reflection, emotion, and imagination.</p>
-                        <p class="film-text-mobile">The cinematic work of ARLYN LIGEIA draws inspiration from science fiction, film noir, gothic cinema, and intense color palettes characteristic of retrofuturist visual aesthetics. Likewise, the cinematic work can extend into music, fashion, and other forms of expression, functioning as interconnected fragments of the same creative exploration.</p>
-                        <p class="film-text-end-mobile">Here you will find the film projects of ARLYN LIGEIA.</p>
-                    </div>
-                </div>  
-            </section>
-            <!-- ===== FIN FILM MOBILE ===== -->
-
-            
-            <!-- ===== FEATURE FILM ===== -->
-            <section class="subsection" id="film-featurefilm">
-                <div class="featurefilm-container">
-                    <h1 class="featurefilm-title"><a href="#film-featurefilm">FEATURE FILM</a></h1>
-                    <!-- TARJETAS -->  
-                    <div class="featurefilm-cards">
-                        <!-- TARJETA -->
-                        <a class="featurefilm-card" href="#alone">
-                            <img src="assets/ALONE. 01 Teaser Poster 4K.png" alt="Alone Teaser Poster">
-                        </a> 
-                    </div> 
-                </div>
-            </section>
-            <!-- ===== FIN FEATURE FILM ===== -->
-  
-            <!-- ===== FEATURE FILM MOBILE ===== -->
-            <section class="subsection" id="film-mobile-featurefilm">
-                <div class="featurefilm-container-mobile">
-                    <h1 class="featurefilm-title-mobile"><a href="#film-mobile-featurefilm">FEATURE FILM</a></h1>
-                    <!-- TARJETAS -->  
-                    <div class="featurefilm-cards-mobile">
-                        <!-- TARJETA -->
-                        <a class="featurefilm-card-mobile" href="#alone-mobile">
-                            <img src="assets/ALONE. 01 Teaser Poster 4K.png" alt="Alone Teaser Poster">
-                        </a> 
-                    </div> 
-                </div>
-            </section>
-            <!-- ===== FIN FEATURE FILM MOBILE ===== -->
-
-            
-            <!-- ===== ALONE PC ===== -->
-            <section class="main-section" id="alone">
-                <div class="alone-container">
-                    <h1 class="alone-title"><a href="#alone">ALONE</a></h1>
-                    <!-- COLUMNAS -->
-                    <div class="alone-columns">
-                        <!-- GRID DE DOS -->
-                        <div class="alone-grid">
-                            <!-- COLUMNA 1: IMAGEN -->
-                            <div class="alone-image">    
-                                <img src="assets/ALONE. 01 Teaser Poster 4K.png" alt="Alone Teaser Poster">
-                            </div>
-                            <!-- COLUMNA 2: PROMO -->
-                            <div class="alone-promo">
-                                <p class="alone-subtitle-1">COMING SOON</p>
-                                <p class="alone-text-1">Written, produced, directed, starred in, filmed, and edited by Arlyn Ligeia</p>
-                                <p class="alone-subtitle-2">SYNOPSIS</p> 
-                                <p class="alone-text-2">A horror content creator puts a retrocausal protocol to the test. What seemed like a simple experiment turns sinister as the rules of reality begin to break down around her.</p>
-                            </div>  
-                        </div>
-                    </div>
-                    <!-- INFORMACIÓN -->  
-                    <div class="alone-information">
-                        <p class="alone-subtitle">CURRENTLY IN PRE-PRODUCTION</p>  
-                        <p class="alone-text">ALONE is Ligeia's first feature film. This is a deeply personal project, born out of adversity and a profound exploration of solitude during one of the most economically difficult periods of her life.</p>
-                        <p class="alone-text">However, instead of giving up, Ligeia found a way to transform pain into art. The screenplay has been written by Ligeia, who will also produce, direct, star in, film, and edit the film herself.</p>
-                        <p class="alone-text">This feature film will mark Ligeia's debut in the world of cinema. A science fiction story that blends psychological and cosmic horror with a deeply dreamlike aesthetic.</p>
-                        <p class="alone-text-end">ALONE is currently in the pre-production stage.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN ALONE PC ===== -->
-
-            <!-- ===== ALONE MOBILE ===== -->
-            <section class="main-section-mobile" id="alone-mobile">
-                <div class="alone-container-mobile">
-                    <h1 class="alone-title-mobile"><a href="#alone-mobile">ALONE</a></h1>
-                    <!-- IMAGEN -->
-                    <div class="alone-image-mobile">    
-                        <img src="assets/ALONE. 01 Teaser Poster 4K.png" alt="Alone Teaser Poster">
-                    </div> 
-                    <!-- INFORMACIÓN -->
-                    <div class="alone-information-mobile">
-                        <p class="alone-subtitle-1-mobile">COMING SOON</p>
-                        <p class="alone-text-1-mobile">Written, produced, directed, starred in, filmed, and edited by Arlyn Ligeia</p>
-                        <p class="alone-subtitle-2-mobile">SYNOPSIS</p>
-                        <p class="alone-text-mobile">A horror content creator puts a retrocausal protocol to the test. What seemed like a simple experiment turns sinister as the rules of reality begin to break down around her.</p>
-                        <p class="alone-subtitle-3-mobile">CURRENTLY IN PRE-PRODUCTION</p> 
-                        <p class="alone-text-mobile">ALONE is Ligeia's first feature film. This is a deeply personal project, born out of adversity and a profound exploration of solitude during one of the most economically difficult periods of her life.</p>
-                        <p class="alone-text-mobile">However, instead of giving up, Ligeia found a way to transform pain into art. The screenplay has been written by Ligeia, who will also produce, direct, star in, film, and edit the film herself.</p>
-                        <p class="alone-text-mobile">This feature film will mark Ligeia's debut in the world of cinema. A science fiction story that blends psychological and cosmic horror with a deeply dreamlike aesthetic.</p>
-                        <p class="alone-text-end-mobile">ALONE is currently in the pre-production stage.</p>
-                    </div>  
-                </div>
-            </section>
-            <!-- ===== FIN ALONE MOBILE ===== -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-            <!-- ===== MEDIUM LENGHT FILM PC ===== -->
-            <section class="subsection" id="film-mediumlengthfilm">
-                <div class="mediumlengthfilm-container">
-                    <h1 class="mediumlengthfilm-title"><a href="#film-mediumlengthfilm">MEDIUM-LENGTH FILM</a></h1>
-                    <!-- TARJETAS -->  
-                    <div class="mediumlengthfilm-cards">
-                        <!-- TARJETA -->
-                        <a class="mediumlengthfilm-card" href="#anechoicchamber57">
-                            <img src="assets/AC57. 01 Teaser Poster 4K.png" alt="Anechoic Chamber 57 Teaser Poster">
-                        </a> 
-                    </div> 
-                </div>
-            </section>
-            <!-- ===== FIN MEDIUM LENGHT FILM PC ===== -->
-  
-            <!-- ===== MEDIUM LENGHT FILM MOBILE ===== -->
-            <section class="subsection-mobile" id="film-mobile-mediumlengthfilm">
-                <div class="mediumlengthfilm-container-mobile">
-                    <h2 class="mediumlengthfilm-title-mobile"><a href="#film-mobile-mediumlengthfilm">MEDIUM-LENGTH FILM</a></h2>
-                    <!-- TARJETAS -->  
-                    <div class="mediumlengthfilm-cards-mobile">
-                        <!-- TARJETA -->
-                        <a class="mediumlengthfilm-card-mobile" href="#anechoicchamber57-mobile">
-                            <img src="assets/AC57. 01 Teaser Poster 4K.png" alt="Anechoic Chamber 57 Teaser Poster">
-                        </a> 
-                    </div> 
-                </div>
-            </section>
-            <!-- ===== FIN MEDIUM LENGHT FILM MOBILE ===== -->
-
-
-
-
-
-            
-            <!-- ===== ANECHOIC CHAMBER 57 PC ===== -->
-            <section class="main-section" id="anechoicchamber57">
-                <div class="anechoicchamber57-container">
-                    <h1 class="anechoicchamber57-title"><a href="#anechoicchamber57">ANECHOIC CHAMBER 57</a></h1>
-                    <!-- COLUMNAS -->
-                    <div class="anechoicchamber57-columns">
-                        <!-- GRID DE DOS -->
-                        <div class="anechoicchamber57-grid">
-                            <!-- COLUMNA 1: IMAGEN -->
-                            <div class="anechoicchamber57-image">    
-                                <img src="assets/AC57. 01 Teaser Poster 4K.png" alt="Anechoic Chamber 57 Teaser Poster">
-                            </div>
-                            <!-- COLUMNA 2: PROMO -->
-                            <div class="anechoicchamber57-promo">
-                                <p class="anechoicchamber57-subtitle-1">AVAILABLE IN FEBRUARY 2027</p>
-                                <p class="anechoicchamber57-text-1">Written, produced, directed, starring, filmed, and edited by Arlyn Ligeia</p>
-                                <p class="anechoicchamber57-subtitle-2">SYNOPSIS</p> 
-                                <p class="anechoicchamber57-text-2">A woman trapped in routine finds a key and a warning. The choice she makes changes the course of her life.</p>
-                            </div>  
-                        </div>
-                    </div>
-                    <!-- INFORMACIÓN -->  
-                    <div class="anechoicchamber57-information">
-                        <p class="anechoicchamber57-subtitle">CURRENTLY IN PRODUCTION</p>  
-                        <p class="anechoicchamber57-text">ANECHOIC CHAMBER 57 is a medium-length psychological surrealist drama film, conceived in parallel with the fashion collection of the same name, as a critique of an increasingly homogenized and repressed society.</p>
-                        <p class="anechoicchamber57-text-end">The idea for this project was born in February 2025, and by May of that same year, formal development of its first elements began. However, due to financial delays, both the film's production and the collection's were postponed, with their release now set for October 2026, closing out the Spring/Summer 2027 season.</p>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN ANECHOIC CHAMBER 57 PC ===== -->
-
-            <!-- ===== ANECHOIC CHAMBER 57 MOBILE ===== -->
-            <section class="main-section-mobile" id="anechoicchamber57-mobile">
-                <div class="anechoicchamber57-container-mobile">
-                    <h1 class="anechoicchamber57-title-mobile"><a href="#anechoicchamber57-mobile">ANECHOIC CHAMBER 57</a></h1>
-                    <!-- IMAGEN -->
-                    <div class="anechoicchamber57-image-mobile">    
-                        <img src="assets/AC57. 01 Teaser Poster 4K.png" alt="Anechoic Chamber 57 Teaser Poster">
-                    </div> 
-                    <!-- INFORMACIÓN -->
-                    <div class="anechoicchamber57-information-mobile">
-                        <p class="anechoicchamber57-subtitle-1-mobile">AVAILABLE IN FEBRUARY 2027</p>
-                        <p class="anechoicchamber57-text-1-mobile">Written, produced, directed, starring, filmed, and edited by Arlyn Ligeia</p>
-                        <p class="anechoicchamber57-subtitle-2-mobile">SYNOPSIS</p>
-                        <p class="anechoicchamber57-text-mobile">A woman trapped in routine finds a key and a warning. The choice she makes changes the course of her life.</p>
-                        <p class="anechoicchamber57-subtitle-3-mobile">CURRENTLY IN PRODUCTION</p> 
-                        <p class="anechoicchamber57-text-mobile">ANECHOIC CHAMBER 57 is a medium-length psychological surrealist drama film, conceived in parallel with the fashion collection of the same name, as a critique of an increasingly homogenized and repressed society.</p>
-                        <p class="anechoicchamber57-text-end-mobile">The idea for this project was born in February 2025, and by May of that same year, formal development of its first elements began. However, due to financial delays, both the film's production and the collection's were postponed, with their release now set for October 2026, closing out the Spring/Summer 2027 season.</p>
-                    </div>  
-                </div>
-            </section>
-            <!-- ===== FIN ANECHOIC CHAMBER 57 MOBILE ===== -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            <!-- ===== SHORT FILM PC ===== -->
-            <!-- ===== FIN SHORT FILM PC ===== -->
-
-            <!-- ===== SHORT FILM MOBILE ===== -->
-            <!-- ===== FIN SHORT FILM MOBILE ===== -->
-
-
-            <!-- ===== MUSIC PC ===== -->
-            <section class="main-section" id="music">
-                <div class="music-container">
-                    <h1 class="music-title"><a href="#music">MUSIC</a></h1>
-                    <!-- INFORMACIÓN -->
-                    <div class="music-information">  
-                        <p class="music-text">Welcome to the Music section.</p>
-                        <p class="music-text">Music is the resonance of Ligeia's universe. Through music, Ligeia's inner world transcends the visual to become atmosphere, rhythm, and melody, creating complete sensory experiences that expand through space.</p>
-                        <p class="music-text">Likewise, Ligeia's music is characterized by strong influences from 80s pop, vaporwave, cybernetic sounds, rap, and spoken word poetry.</p>
-                        <p class="music-text-end">Here you will find all of Ligeia's music projects.</p>
-                    </div>
-                </div>  
-            </section>     
-            <!-- ===== FIN MUSIC PC ===== -->
-
-            <!-- MUSIC MOBILE -->
-            <section class="main-section-mobile" id="music-mobile">
-                <div class="music-container-mobile">
-                    <h1 class="music-title-mobile"><a href="#music-mobile">MUSIC</a></h1>
-                    <!-- INFORMACIÓN -->    
-                    <div class="music-information-mobile">  
-                        <p class="music-text-mobile">Welcome to the Music section.</p>
-                        <p class="music-text-mobile">Music is the resonance of Ligeia's universe. Through music, Ligeia's inner world transcends the visual to become atmosphere, rhythm, and melody, creating complete sensory experiences that expand through space.</p>
-                        <p class="music-text-mobile">Likewise, Ligeia's music is characterized by strong influences from 80s pop, vaporwave, cybernetic sounds, rap, and spoken word poetry.</p>
-                        <p class="music-text-end-mobile">Here you will find all of Ligeia's music projects.</p>
-                    </div>
-                </div>  
-            </section>
-            <!-- FIN MUSIC MOBILE -->
-
-
-            <!-- ===== SINGLES PC ===== -->
-            <!-- ===== FIN SINGLES PC ===== -->
-
-            <!-- ===== SINGLES MOBILE ===== -->
-            <!-- ===== FIN SINGLES MOBILE ===== -->
-
-
-            <!-- ===== ALBUM PC ===== -->
-            <!-- ===== FIN ALBUM PC ===== -->
-
-            <!-- ===== ALBUM MOBILE ===== -->
-            <!-- ===== FIN ALBUM MOBILE ===== -->
-
-
-            <!-- ===== FASHION PC ===== -->
-            <section class="main-section" id="fashion">
-                <div class="fashion-container">
-                    <h2 class="fashion-title"><a href="#fashion">FASHION</a></h2>
-                    <!-- INFORMACIÓN --> 
-                    <div class="fashion-information">  
-                        <p class="fashion-text">Welcome to the Fashion section.</p>
-                        <p class="fashion-text">Fashion is the tangible texture of Ligeia's universe. Through design and texture, Ligeia moves beyond the visual and sonic to transform her world into physical pieces that complete the sensory experience of this universe.</p>
-                        <p class="fashion-text">Likewise, Ligeia's fashion is characterized by strong influences from film noir femme fatales, Victorian gothic, the 1990s, and a bold retrofuturistic and cybernetic color palette.</p>
-                        <p class="fashion-text-end">Here you will find all of Ligeia's fashion projects.</p>
-                    </div>
-                </div>  
-            </section>
-            <!-- ===== FILM FASHION PC ===== -->
-
-            <!-- ===== FILM FASHION MOBILE ===== -->
-            <section class="main-section-mobile" id="fashion-mobile">
-                <div class="fashion-container-mobile">
-                    <h2 class="fashion-title-mobile"><a href="#fashion-mobile">FASHION</a></h2>    
-                    <div class="fashion-information-mobile">  
-                        <p class="fashion-text-mobile">Welcome to the Fashion section.</p>
-                        <p class="fashion-text-mobile">Fashion is the tangible texture of Ligeia's universe. Through design and texture, Ligeia moves beyond the visual and sonic to transform her world into physical pieces that complete the sensory experience of this universe.</p>
-                        <p class="fashion-text-mobile">Likewise, Ligeia's fashion is characterized by strong influences from film noir femme fatales, Victorian gothic, the 1990s, and a bold retrofuturistic and cybernetic color palette.</p>
-                        <p class="fashion-text-end-mobile">Here you will find all of Ligeia's fashion projects.</p>
-                    </div>
-                </div>  
-            </section>
-            <!-- ===== FILM FASHION MOBILE ===== -->
-
-
-            <!-- ===== SS COLLECTION PC ===== -->
-            <!-- ===== FIN SS COLLECTION PC ===== -->
-
-            <!-- ===== SS COLLECTION MOBILE ===== -->
-            <!-- ===== FIN SS COLLECTION MOBILE ===== -->
-
-
-            <!-- ===== FW COLLECTION PC ===== -->
-            <!-- ===== FIN FW COLLECTION PC ===== -->
-
-            <!-- ===== FW COLLECTION MOBILE ===== -->
-            <!-- ===== FIN FW COLLECTION MOBILE ===== -->
-           
-
-            <!-- ===== CAPSULE COLLECTION PC ===== -->
-            <!-- ===== FIN CAPSULE COLLECTION PC ===== -->
-
-            <!-- ===== CAPSULE COLLECTION MOBILE ===== -->
-            <!-- ===== FIN CAPSULE COLLECTION MOBILE ===== -->
-
-
-            <!-- ===== RESORT COLLECTION PC ===== -->
-            <!-- ===== FIN RESORT COLLECTION PC ===== -->
-
-            <!-- ===== RESORT COLLECTION MOBILE ===== -->
-            <!-- ===== FIN RESORT COLLECTION MOBILE ===== -->
-
-
-                        <!-- ===== BE MY PATRON PC ===== -->
-            <section class="main-section" id="bemypatron">
-                <div class="bemypatron-container">
-                    <h2 class="bemypatron-title"><a href="#bemypatron">BE MY PATRON</a></h2>
-                    <div class="bemypatron-information">  
-                        <p class="bemypatron-text">Dear Future Patron,</p>
-                        <p class="bemypatron-text">In the courts of the Renaissance, artists presented themselves to their patrons. When Leonardo da Vinci wrote to Ludovico Sforza, he offered a catalogue of what he could build, defend, and create, and invited the ruler of Milan to claim the privilege of commissioning it first. That same principle guides this letter.</p>
-                        <p class="bemypatron-text">I am building a universe where cinema, music, and fashion converge under a single law: that science and beauty are not opposites. This is a body of work already in motion, extending an invitation to those who wish to shape its next chapter.</p>
-                        <p class="bemypatron-text">What I bring to this alliance:</p>
-                        <p class="bemypatron-text">- A universe built on scientific rigor; physics, biology, and psychology translated into cinema, sound, and silhouette.</p>
-                        <p class="bemypatron-text">- A distinctive aesthetic language, already defined, already recognizable, positioned at the intersection of luxury, science, and the transhuman.</p>
-                        <p class="bemypatron-text">- Absolute authorial control; every project is written, directed, and executed by a single vision, with no intermediaries to dilute it.</p>
-                        <p class="bemypatron-text">- An unusual multidisciplinary formation; psychology, audiovisual communication, and fashion design, converted into a single creative language.</p>
-                        <p class="bemypatron-text">- A clear roadmap; a fashion collection and its medium-length film debuting before the end of the year, with an album and a feature film already in development.</p>
-                        <p class="bemypatron-text">What patronage of this work looks like:</p>
-                        <p class="bemypatron-text">- Ongoing Patronage: A lasting alliance for those who wish to accompany this universe as it unfolds. Early access to unreleased work, insight into the creative process, and a permanent place among its first witnesses.</p>
-                        <p class="bemypatron-text">- Full Project Patronage: For those who wish to attach their name to a defining chapter; full backing of a film, a collection, or a body of work, with shared credit and direct involvement in how it reaches the world. I invite you to reach out directly, and together we will design that collaboration.</p>
-                        <p class="bemypatron-text">To align with this work is what patronage has always been; recognition, granted early, of what will later be undeniable.</p>
-                        <p class="bemypatron-text-end">With gratitude,<br>Arlyn Ligeia<br>08/01/2025</p>  
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN BE MY PATRON PC ===== -->
-
-            <!-- BE MY PATRON MOBILE -->
-            <section class="main-section-mobile" id="bemypatron-mobile">
-                <div class="bemypatron-container-mobile">
-                    <h2 class="bemypatron-title-mobile"><a href="#bemypatron-mobile-">BE MY PATRON</a></h2>
-                    <div class="bemypatron-information-mobile">  
-                        <p class="bemypatron-text-mobile">Dear Future Patron,</p>
-                        <p class="bemypatron-text-mobile">In the courts of the Renaissance, artists presented themselves to their patrons. When Leonardo da Vinci wrote to Ludovico Sforza, he offered a catalogue of what he could build, defend, and create, and invited the ruler of Milan to claim the privilege of commissioning it first. That same principle guides this letter.</p>
-                        <p class="bemypatron-text-mobile">I am building a universe where cinema, music, and fashion converge under a single law: that science and beauty are not opposites. This is a body of work already in motion, extending an invitation to those who wish to shape its next chapter.</p>
-                        <p class="bemypatron-text-mobile">What I bring to this alliance:</p>
-                        <p class="bemypatron-text-mobile">- A universe built on scientific rigor; physics, biology, and psychology translated into cinema, sound, and silhouette.</p>
-                        <p class="bemypatron-text-mobile">- A distinctive aesthetic language, already defined, already recognizable, positioned at the intersection of luxury, science, and the transhuman.</p>
-                        <p class="bemypatron-text-mobile">- Absolute authorial control; every project is written, directed, and executed by a single vision, with no intermediaries to dilute it.</p>
-                        <p class="bemypatron-text-mobile">- An unusual multidisciplinary formation; psychology, audiovisual communication, and fashion design, converted into a single creative language.</p>
-                        <p class="bemypatron-text-mobile">- A clear roadmap; a fashion collection and its medium-length film debuting before the end of the year, with an album and a feature film already in development.</p>
-                        <p class="bemypatron-text-mobile">What patronage of this work looks like:</p>
-                        <p class="bemypatron-text-mobile">- Ongoing Patronage: A lasting alliance for those who wish to accompany this universe as it unfolds. Early access to unreleased work, insight into the creative process, and a permanent place among its first witnesses.</p>
-                        <p class="bemypatron-text-mobile">- Full Project Patronage: For those who wish to attach their name to a defining chapter; full backing of a film, a collection, or a body of work, with shared credit and direct involvement in how it reaches the world. I invite you to reach out directly, and together we will design that collaboration.</p>
-                        <p class="bemypatron-text-mobile">To align with this work is what patronage has always been; recognition, granted early, of what will later be undeniable.</p>
-                        <p class="bemypatron-text-end-mobile">With gratitude,<br>Arlyn Ligeia<br>08/01/2025</p>
-                    </div>
-                </div>
-            </section>
-            <!-- FIN BE MY PATRON MOBILE -->
-
-
-<!-- ===== CONTACT PC ===== -->
-            <section class="main-section" id="contact">
-                <div class="contact-container">
-                    <h1 class="contact-title"><a href="#contact">CONTACT FOR WORK</a></h1>
-                    <!-- FORMULARIO -->
-                    <div class="contact-form">
-                        <form class="contact-form" action="https://formspree.io/f/xwpqdyaq" method="POST">  
-                            <label class="contact-label" for="contact-firstname">FIRST NAME</label>
-                            <input class="contact-input" id="contact-firstname" type="text" name="firstname" required>
-                            <label class="contact-label" for="contact-lastname">LAST NAME</label>
-                            <input class="contact-input" id="contact-lastname" type="text" name="lastname" required>
-                            <label class="contact-label" for="contact-email">EMAIL</label>
-                            <input class="contact-input" id="contact-email" type="email" name="email" required>                            
-                            <!-- TIPO DE CONTACTO -->
-                            <label class="contact-label" for="contact-type">I AM CONTACTING YOU AS</label>
-                            <select class="contact-input" id="contact-type" name="type" required>
-                                <option value="">Select an option</option>
-                                <option value="work">WORK</option>
-                                <option value="fan">FAN</option>
-                            </select>
-                            <!-- TEMA (solo se muestra si eligen WORK) -->
-                            <div class="contact-topic" id="contact-wrapper">
-                                <label class="contact-label" for="contact-topic">TOPIC</label>
-                                <select class="contact-input" id="contact-topic" name="topic">
-                                    <option value="">Select a topic</option>
-                                    <option value="film">Film</option>
-                                    <option value="music">Music</option>
-                                    <option value="fashion">Fashion</option>
-                                </select>
-                            </div>
-                            <!-- MENSAJE -->                    
-                             <label class="contact-label" for="contact-message">MESSAGE</label>
-                            <textarea class="contact-textarea" id="contact-message" name="message" rows="6" required></textarea>
-                            <!-- BOTÓN -->
-                            <div class="contact-button">  
-                                <button class="contact-submit" type="submit">SUBMIT</button>
-                            </div>  
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN CONTACT PC ===== -->
-
-            <!-- ===== CONTACT MOBILE ===== -->
-            <section class="main-section-mobile" id="contact-mobile">
-                <div class="contact-container-mobile">
-                    <h1 class="contact-title-mobile"><a href="#contact-mobile">CONTACT FOR WORK</a></h1>
-                    <!-- FORMULARIO -->
-                    <div class="contact-form-mobile">
-                        <form class="contact-form-mobile" action="https://formspree.io/f/xwpqdyaq" method="POST">  
-                            <label class="contact-label-mobile" for="contact-firstname-mobile">FIRST NAME</label>
-                            <input class="contact-input-mobile" id="contact-firstname-mobile" type="text" name="firstname" required>
-                            <label class="contact-label-mobile" for="contact-lastname-mobile">LAST NAME</label>
-                            <input class="contact-input-mobile" id="contact-lastname-mobile" type="text" name="lastname" required>
-                            <label class="contact-label-mobile" for="contact-email-mobile">EMAIL</label>
-                            <input class="contact-input-mobile" id="contact-email-mobile" type="email" name="email" required>                            
-                            <!-- TIPO DE CONTACTO -->
-                            <label class="contact-label-mobile" for="contact-type-mobile">I AM CONTACTING YOU AS</label>
-                            <select class="contact-input-mobile" id="contact-type-mobile" name="type" required>
-                                <option value="">Select an option</option>
-                                <option value="work">WORK</option>
-                                <option value="fan">FAN</option>
-                            </select>
-                            <!-- TEMA (solo se muestra si eligen WORK) -->
-                            <div class="contact-topic-mobile" id="contact-wrapper-mobile">
-                                <label class="contact-label-mobile" for="contact-topic-mobile">TOPIC</label>
-                                <select class="contact-input-mobile" id="contact-topic-mobile" name="topic">
-                                    <option value="">Select a topic</option>
-                                    <option value="film">Film</option>
-                                    <option value="music">Music</option>
-                                    <option value="fashion">Fashion</option>
-                                </select>
-                            </div>
-                            <!-- MENSAJE -->                    
-                             <label class="contact-label-mobile" for="contact-message-mobile">MESSAGE</label>
-                            <textarea class="contact-textarea-mobile" id="contact-message-mobile" name="message" rows="6" required></textarea>
-                            <!-- BOTÓN -->
-                            <div class="contact-button-mobile">  
-                                <button class="contact-submit-mobile" type="submit">SUBMIT</button>
-                            </div>  
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <!-- ===== FIN CONTACT MOBILE ===== -->
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-</main>
-
-<!-- ===== FOOTER PC ===== -->
-<footer class="footer">
-    <!-- ===== LOGO Y COPYRIGHT ===== -->
-    <div class="footer-brand">
-        <div class="footer-brand-logo">
-            <img src="https://raw.githubusercontent.com/arlynligeia/arlynligeia.github.io/refs/heads/main/assets/assets/ARLYN%20LIGEIA.%2001%20Vector%20Imagotype.svg"
-                 alt="Arlyn Ligeia Logo">
-        </div>
-        <div class="footer-brand-allrightreserved">Arlyn Ligeia © 2025-2026. All rights reserved.</div>
-    </div>
-    <!-- ===== LINKS ===== -->
-    <div class="footer-link">
-        <div class="footer-link-termsandconditions">
-            <a href="#termsandconditions">Terms & Conditions</a>
-        </div>
-        <div class="footer-link-privacypolicy">
-            <a href="#privacypolicy">Privacy Policy</a>
-        </div>
-        <div class="footer-link-cookiepolicy">
-            <a href="#cookiepolicy">Cookie Policy</a>
-        </div>
-    </div>
-    <!-- ===== REDES SOCIALES ===== -->
-    <div class="footer-socialmedia">
-        <a href="https://www.tiktok.com/@arlynligeia" target="_blank" rel="noopener noreferrer">
-            <svg class="footer-socialmedia-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/arlynligeia/?next=%2F%40arlynligeia%2F" target="_blank" rel="noopener noreferrer">
-            <svg class="footer-socialmedia-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/@arlynligeia" target="_blank" rel="noopener noreferrer">
-            <svg class="footer-socialmedia-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-        </a>
-        <a href="https://www.twitter.com/@arlynligeia" target="_blank" rel="noopener noreferrer">
-            <svg class="footer-socialmedia-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="https://www.reddit.com/user/arlynligeiacp/?share_id=slkfM1-rf_zpYD3D9XjxF&utm_content=1&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1/" target="_blank" rel="noopener noreferrer">
-            <svg class="footer-socialmedia-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.362.759-.594 1.265-.594.904 0 1.634.73 1.634 1.633 0 .566-.29 1.064-.73 1.36.015.192.022.384.022.579 0 2.825-3.238 5.116-7.234 5.116-3.996 0-7.234-2.291-7.234-5.116 0-.195.006-.387.022-.579a1.642 1.642 0 0 1-.73-1.36c0-.903.73-1.633 1.634-1.633.506 0 .957.232 1.265.594 1.194-.856 2.85-1.417 4.674-1.488l.893-4.188a.252.252 0 0 1 .201-.197l2.883.603c.063-.05.131-.091.201-.126zm-7.625 7.42c-.783 0-1.416.633-1.416 1.416 0 .783.633 1.417 1.416 1.417.783 0 1.416-.634 1.416-1.417 0-.783-.633-1.416-1.416-1.416zm6.624 0c-.783 0-1.417.633-1.417 1.416 0 .783.634 1.417 1.417 1.417.783 0 1.416-.634 1.416-1.417 0-.783-.633-1.416-1.416-1.416zm-3.931 3.751c-.551 0-1.059.162-1.441.437a.252.252 0 0 0 .047.42c.451.24 1.001.373 1.394.373.393 0 .943-.133 1.394-.373a.252.252 0 0 0 .047-.42c-.382-.275-.89-.437-1.441-.437z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@arlynligeia" target="_blank" rel="noopener noreferrer">
-            <svg class="footer-socialmedia-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </a>
-        <a href="https://vimeo.com/arlynligeia" target="_blank" rel="noopener noreferrer">
-            <svg class="footer-socialmedia-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.381-8.29 6.381-1.409 0-2.578-1.294-3.553-3.881l-1.917-7.854c-.719-2.584-1.488-3.878-2.312-3.878-.18 0-.806.378-1.881 1.132L0 7.831c1.185-1.044 2.351-2.084 3.501-3.128C5.08 3.362 6.153 2.72 6.965 2.658c1.634-.092 2.636 1.028 3.006 3.508.404 2.851.69 4.62.86 5.298.495 2.34 1.037 3.511 1.626 3.511.449 0 1.079-.638 1.889-1.915.811-1.277 1.216-2.369 1.216-3.285 0-1.244-.443-2.11-1.33-2.111-.744 0-1.507.349-2.289 1.045 1.527-4.943 4.501-7.352 8.932-7.352 1.904 0 2.973 1.345 3.206 4.032z"/></svg>
-        </a>
-    </div>
-    <!-- ===== BOTÓN SCROLL TOP ===== -->
-    <div class="footer-button">
-        <button class="footer-button-scrolltop" type="button">Λ</button>
-    </div>
-</footer>
-<!-- ===== FIN FOOTER PC ===== -->
-
-<!-- ===== FOOTER MOBILE ===== -->
-<footer class="footer-mobile">
-    <!-- ===== LOGO Y COPYRIGHT ===== -->
-    <div class="footer-brand-mobile">
-        <div class="footer-brand-logo-mobile">
-            <img src="https://raw.githubusercontent.com/arlynligeia/arlynligeia.github.io/refs/heads/main/assets/assets/ARLYN%20LIGEIA.%2001%20Vector%20Imagotype.svg"
-                 alt="Arlyn Ligeia Logo">
-        </div>
-        <div class="footer-brand-allrightreserved-mobile">Arlyn Ligeia © 2025-2026. All rights reserved.</div>
-    </div>
-    <!-- ===== LINKS ===== -->
-    <div class="footer-link-mobile">
-        <div class="footer-link-termsandconditions-mobile">
-            <a href="#termsandconditions-mobile">Terms & Conditions</a>
-        </div>
-        <div class="footer-link-privacypolicy-mobile">
-            <a href="#privacypolicy-mobile">Privacy Policy</a>
-        </div>
-        <div class="footer-link-cookiepolicy-mobile">
-            <a href="#cookiepolicy-mobile">Cookie Policy</a>
-        </div>
-    </div>
-    <!-- ===== REDES SOCIALES ===== -->
-    <div class="footer-socialmedia-mobile">
-        <a href="https://www.tiktok.com/@arlynligeia" target="_blank" rel="noopener noreferrer" class="footer-socialmedia-link-mobile">
-            <svg class="footer-socialmedia-icon-mobile" viewBox="0 0 24 24"><path fill="currentColor" d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/arlynligeia/?next=%2F%40arlynligeia%2F" target="_blank" rel="noopener noreferrer" class="footer-socialmedia-link-mobile">
-            <svg class="footer-socialmedia-icon-mobile" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="https://www.facebook.com/@arlynligeia" target="_blank" rel="noopener noreferrer" class="footer-socialmedia-link-mobile">
-            <svg class="footer-socialmedia-icon-mobile" viewBox="0 0 24 24"><path fill="currentColor" d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-        </a>
-        <a href="https://www.twitter.com/@arlynligeia" target="_blank" rel="noopener noreferrer" class="footer-socialmedia-link-mobile">
-            <svg class="footer-socialmedia-icon-mobile" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="https://www.reddit.com/user/arlynligeiacp/?share_id=slkfM1-rf_zpYD3D9XjxF&utm_content=1&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1/" target="_blank" rel="noopener noreferrer" class="footer-socialmedia-link-mobile">
-            <svg class="footer-socialmedia-icon-mobile" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.362.759-.594 1.265-.594.904 0 1.634.73 1.634 1.633 0 .566-.29 1.064-.73 1.36.015.192.022.384.022.579 0 2.825-3.238 5.116-7.234 5.116-3.996 0-7.234-2.291-7.234-5.116 0-.195.006-.387.022-.579a1.642 1.642 0 0 1-.73-1.36c0-.903.73-1.633 1.634-1.633.506 0 .957.232 1.265.594 1.194-.856 2.85-1.417 4.674-1.488l.893-4.188a.252.252 0 0 1 .201-.197l2.883.603c.063-.05.131-.091.201-.126zm-7.625 7.42c-.783 0-1.416.633-1.416 1.416 0 .783.633 1.417 1.416 1.417.783 0 1.416-.634 1.416-1.417 0-.783-.633-1.416-1.416-1.416zm6.624 0c-.783 0-1.417.633-1.417 1.416 0 .783.634 1.417 1.417 1.417.783 0 1.416-.634 1.416-1.417 0-.783-.633-1.416-1.416-1.416zm-3.931 3.751c-.551 0-1.059.162-1.441.437a.252.252 0 0 0 .047.42c.451.24 1.001.373 1.394.373.393 0 .943-.133 1.394-.373a.252.252 0 0 0 .047-.42c-.382-.275-.89-.437-1.441-.437z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@arlynligeia" target="_blank" rel="noopener noreferrer" class="footer-socialmedia-link-mobile">
-            <svg class="footer-socialmedia-icon-mobile" viewBox="0 0 24 24"><path fill="currentColor" d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-        </a>
-        <a href="https://vimeo.com/arlynligeia" target="_blank" rel="noopener noreferrer" class="footer-socialmedia-link-mobile">
-            <svg class="footer-socialmedia-icon-mobile" viewBox="0 0 24 24"><path fill="currentColor" d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.381-8.29 6.381-1.409 0-2.578-1.294-3.553-3.881l-1.917-7.854c-.719-2.584-1.488-3.878-2.312-3.878-.18 0-.806.378-1.881 1.132L0 7.831c1.185-1.044 2.351-2.084 3.501-3.128C5.08 3.362 6.153 2.72 6.965 2.658c1.634-.092 2.636 1.028 3.006 3.508.404 2.851.69 4.62.86 5.298.495 2.34 1.037 3.511 1.626 3.511.449 0 1.079-.638 1.889-1.915.811-1.277 1.216-2.369 1.216-3.285 0-1.244-.443-2.11-1.33-2.111-.744 0-1.507.349-2.289 1.045 1.527-4.943 4.501-7.352 8.932-7.352 1.904 0 2.973 1.345 3.206 4.032z"/></svg>
-        </a>
-    </div>
-    <!-- ===== BOTÓN SCROLL TOP ===== -->
-    <div class="footer-button-mobile">
-        <button class="footer-button-scrolltop-mobile" type="button">Λ</button>
-    </div>
-</footer>
-<!-- ===== FIN FOOTER ===== -->
-
-<!-- ===== SCRIPT ===== -->
-<script src="script.js"></script>   
-
+<body>
+<div id="stage"></div>
+<div id="bar">
+  <label>Formato
+    <select id="ratio">
+      <option value="0.6667" selected>Póster 2:3</option>
+      <option value="0.75">3:4</option>
+      <option value="1">1:1</option>
+      <option value="1.7778">16:9</option>
+    </select>
+  </label>
+  <label>Zoom <input id="fov" type="range" min="40" max="110" value="75"></label>
+  <label>Tamaño PNG
+    <select id="px">
+      <option value="2400">2400 px (lado largo)</option>
+      <option value="3600" selected>3600 px</option>
+      <option value="5000">5000 px</option>
+    </select>
+  </label>
+  <button id="save">Guardar PNG</button>
+  <span>Arrastra: mirar · WASD: mover · Q/E: bajar/subir · H: ocultar barra</span>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+
+const W = 8, H = 5, L = 24, hw = W / 2, hl = L / 2, DOOR_Z = -4;
+const MAG = 0xff2bd6, CYA = 0x19d9ff;
+
+const stage = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+stage.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x07031a);
+scene.fog = new THREE.FogExp2(0x07031a, 0.04);
+const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 60);
+camera.rotation.order = 'YXZ';
+
+// --- Paneles acústicos ---
+const S = 0.354;
+const pyr = new THREE.ConeGeometry(0.25, 0.35, 4, 1, true);
+pyr.rotateY(Math.PI / 4); pyr.translate(0, 0.175, 0);
+const foam = new THREE.MeshStandardMaterial({ roughness: 0.55, flatShading: true });
+const palette = [0x2b1a8a, 0x4a1fa8, 0x7a24c8, 0x1d3fa0, 0x3a0f70].map(c => new THREE.Color(c));
+function panel(origin, u, v, lenU, lenV, normal, skip) {
+  const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), normal);
+  const pts = [];
+  for (let i = 0; i < Math.floor(lenU / S); i++)
+    for (let j = 0; j < Math.floor(lenV / S); j++) {
+      const p = origin.clone().addScaledVector(u, (i + .5) * S).addScaledVector(v, (j + .5) * S);
+      if (!skip || !skip(p)) pts.push(p);
+    }
+  const mesh = new THREE.InstancedMesh(pyr, foam, pts.length);
+  const m = new THREE.Matrix4(), one = new THREE.Vector3(1, 1, 1);
+  pts.forEach((p, i) => { m.compose(p, q, one); mesh.setMatrixAt(i, m); mesh.setColorAt(i, palette[(Math.random() * palette.length) | 0]); });
+  scene.add(mesh);
+}
+const X = new THREE.Vector3(1, 0, 0), Y = new THREE.Vector3(0, 1, 0), Z = new THREE.Vector3(0, 0, 1);
+panel(new THREE.Vector3(-hw, 0, -hl), Z, Y, L, H, X);
+panel(new THREE.Vector3(hw, 0, -hl), Z, Y, L, H, X.clone().negate(), p => Math.abs(p.z - DOOR_Z) < 1.05 && p.y < 2.9);
+panel(new THREE.Vector3(-hw, 0, -hl), X, Y, W, H, Z);
+panel(new THREE.Vector3(-hw, 0, hl), X, Y, W, H, Z.clone().negate());
+panel(new THREE.Vector3(-hw, H, -hl), X, Z, W, L, Y.clone().negate());
+
+// --- Suelo ---
+const c = document.createElement('canvas'); c.width = c.height = 256;
+const g = c.getContext('2d');
+g.fillStyle = '#0c0a2e'; g.fillRect(0, 0, 256, 256);
+g.strokeStyle = '#5b3fd6'; g.lineWidth = 6; g.strokeRect(0, 0, 256, 256);
+const tex = new THREE.CanvasTexture(c);
+tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(W / .6, L / .6); tex.anisotropy = 8;
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(W, L), new THREE.MeshStandardMaterial({ map: tex, metalness: .7, roughness: .35, color: 0xa090ff }));
+floor.rotation.x = -Math.PI / 2; scene.add(floor);
+
+// --- LED ---
+const neon = hex => new THREE.MeshBasicMaterial({ color: hex });
+const box = (w, h, d, x, y, z, hex) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), neon(hex)); m.position.set(x, y, z); scene.add(m); };
+for (let i = 0; i < 5; i++) for (const s of [-1, 1]) box(.12, .04, 2.6, s * 2.3, H - .37, -10 + i * 4.8, (i + (s > 0 ? 1 : 0)) % 2 ? CYA : MAG);
+for (const s of [-1, 1]) box(.06, .03, L - 1, s * (hw - .45), .02, 0, CYA);
+box(W - 1, .03, .06, 0, .02, -hl + .45, CYA);
+
+scene.add(new THREE.AmbientLight(0x3a2a80, .9));
+[-10, -4, 2, 8].forEach((z, i) => { const l = new THREE.PointLight(i % 2 ? CYA : MAG, 28, 14, 2); l.position.set(0, H - .8, z); scene.add(l); });
+const dl = new THREE.PointLight(MAG, 18, 8, 2); dl.position.set(hw - 1, 1.6, DOOR_Z); scene.add(dl);
+
+// --- Puerta ---
+const dx = hw - .12;
+const door = new THREE.Mesh(new THREE.BoxGeometry(.08, 2.5, 1.4), new THREE.MeshStandardMaterial({ color: 0x15113f, metalness: .6, roughness: .4 }));
+door.position.set(dx + .03, 1.25, DOOR_Z); scene.add(door);
+box(.06, 2.56, .06, dx, 1.28, DOOR_Z - .75, MAG);
+box(.06, 2.56, .06, dx, 1.28, DOOR_Z + .75, MAG);
+box(.06, .06, 1.56, dx, 2.56, DOOR_Z, MAG);
+box(.06, .5, .06, dx - .04, 1.2, DOOR_Z + .5, CYA);
+
+// --- Controles ---
+const pos = { x: 0, y: 1.7, z: 10, yaw: 0, pitch: 0 };
+const keys = {};
+addEventListener('keydown', e => { keys[e.code] = true; if (e.code === 'KeyH') bar.classList.toggle('off'); });
+addEventListener('keyup', e => { keys[e.code] = false; });
+let drag = null;
+const cv = renderer.domElement;
+cv.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY }; cv.setPointerCapture(e.pointerId); });
+cv.addEventListener('pointerup', () => drag = null);
+cv.addEventListener('pointermove', e => {
+  if (!drag) return;
+  pos.yaw -= (e.clientX - drag.x) * .004;
+  pos.pitch = Math.max(-1.2, Math.min(1.2, pos.pitch - (e.clientY - drag.y) * .004));
+  drag = { x: e.clientX, y: e.clientY };
+});
+
+// --- Tamaño / formato ---
+const bar = document.getElementById('bar');
+const ratioEl = document.getElementById('ratio'), fovEl = document.getElementById('fov'), pxEl = document.getElementById('px');
+function fit() {
+  const r = parseFloat(ratioEl.value);
+  let w = innerWidth, h = innerHeight;
+  if (w / h > r) w = h * r; else h = w / r;
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setSize(Math.floor(w), Math.floor(h));
+  camera.aspect = r;
+  camera.fov = parseFloat(fovEl.value);
+  camera.updateProjectionMatrix();
+}
+ratioEl.onchange = fovEl.oninput = fit;
+addEventListener('resize', fit);
+
+// --- Guardar PNG ---
+document.getElementById('save').onclick = () => {
+  const r = parseFloat(ratioEl.value), long = parseInt(pxEl.value);
+  const w = r >= 1 ? long : Math.round(long * r), h = r >= 1 ? Math.round(long / r) : long;
+  renderer.setPixelRatio(1);
+  renderer.setSize(w, h, false);
+  camera.aspect = r; camera.updateProjectionMatrix();
+  camera.position.set(pos.x, pos.y, pos.z); camera.rotation.set(pos.pitch, pos.yaw, 0);
+  renderer.render(scene, camera);
+  cv.toBlob(b => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(b);
+    a.download = `camara-anecoica-${w}x${h}.png`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+    fit();
+  }, 'image/png');
+};
+
+let last = performance.now();
+function frame(now) {
+  const dt = Math.min((now - last) / 1000, .1); last = now;
+  const f = (keys.KeyW || keys.ArrowUp ? 1 : 0) - (keys.KeyS || keys.ArrowDown ? 1 : 0);
+  const s = (keys.KeyD || keys.ArrowRight ? 1 : 0) - (keys.KeyA || keys.ArrowLeft ? 1 : 0);
+  const v = (keys.KeyE ? 1 : 0) - (keys.KeyQ ? 1 : 0);
+  const k = 3.2 * dt;
+  pos.x += (-Math.sin(pos.yaw) * f + Math.cos(pos.yaw) * s) * k;
+  pos.z += (-Math.cos(pos.yaw) * f - Math.sin(pos.yaw) * s) * k;
+  pos.y = Math.max(.4, Math.min(H - .6, pos.y + v * k));
+  pos.x = Math.max(-hw + .8, Math.min(hw - .8, pos.x));
+  pos.z = Math.max(-hl + .8, Math.min(hl - .8, pos.z));
+  camera.position.set(pos.x, pos.y, pos.z);
+  camera.rotation.set(pos.pitch, pos.yaw, 0);
+  renderer.render(scene, camera);
+  requestAnimationFrame(frame);
+}
+fit();
+requestAnimationFrame(frame);
+</script>
 </body>
-
 </html>
